@@ -173,7 +173,18 @@ ul {
   margin: 0;
   padding: 0;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">let head_body = document.head;
+
+.NoteLink a {
+  color: orange;
+}
+
+.NoteLink a:hover {
+  color: yellow;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
+
+
+let head_body = document.head;
 head_body.insertAdjacentHTML("beforeend", ' \
 <link rel="preconnect" href="https://fonts.googleapis.com"> \
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> \
@@ -184,14 +195,27 @@ let left_body = document.getElementById("ui-bar-body");
 left_body.insertAdjacentHTML("beforeend", ' \
 <div id="PlayerInventory"> \
     <ul id="PlayerInventoryList"> \
-        <li>aa</li> \
-        <li>bb</li> \
-        <li>cc</li> \
     </ul> \
 </div> \
 ');
+let PlayerInventoryList = document.getElementById("PlayerInventoryList");
 
-</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="750,375" size="100,100">test body 1
+
+setup.UpdatePlayerInventoryList = function() {
+  let Content = '';
+  PlayerInventoryListArray.forEach((item, index) => {
+    Content += `<li>${item}</li>`;
+  });
+  PlayerInventoryList.innerHTML=Content;
+};
+
+setup.AddItemToPlayerInventoryList = function(ItemName) {
+  PlayerInventoryListArray.push(ItemName);
+  setup.UpdatePlayerInventoryList();
+};</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="750,375" size="100,100">test body 1
+
+Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;&lt;&lt;script&gt;&gt;setup.AddItemToPlayerInventoryList(&quot;jambon&quot;);&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt; bi bla blou
+
 [[Passage 2]]
 [[Passage 3]]
 
