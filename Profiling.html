@@ -104,8 +104,30 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Profiling" startnode="1" creator="Twine" creator-version="2.12.0" format="SugarCube" format-version="2.37.3" ifid="DDCFFE5E-D6FA-4F6A-AA88-8A33835202BE" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#menu {
+	<tw-storydata name="Profiling" startnode="1" creator="Twine" creator-version="2.12.0" format="SugarCube" format-version="2.37.3" ifid="DDCFFE5E-D6FA-4F6A-AA88-8A33835202BE" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">:root {
+  --LeftBodyWidth: 400px;
+}
+
+#menu {
   display: None;
+}
+
+#ui-bar {
+  width: var(--LeftBodyWidth);
+}
+
+#story {
+    margin-left: var(--LeftBodyWidth);
+}
+
+@media screen and (max-width: 1136px) {
+    #story {
+        margin-left: var(--LeftBodyWidth);
+    }
+}
+
+#passages {
+  margin-left: 100px;
 }
 
 #ui-bar-tray {
@@ -115,17 +137,26 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 #ui-bar-body {
   text-align: center;
 }
-  
-
 
 #PlayerInventory {
-  background-color: #ffe4c4;
+  background-image: url('https://github.com/hzFishy/PsychoChatGame/blob/main/content/ConfidentialPaperBackground.png?raw=true');
+  background-size: 380px;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 500px;
   text-align: left;
 }
 
+#PlayerInventoryList {
+  padding-top: 120px;
+  padding-left: 25px;
+}
+
 #PlayerInventory p, #PlayerInventory li {
   color: black;
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #PlayerInventory p {
@@ -142,11 +173,17 @@ ul {
   margin: 0;
   padding: 0;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">let left_body = document.getElementById("ui-bar-body");
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">let head_body = document.head;
+head_body.insertAdjacentHTML("beforeend", ' \
+<link rel="preconnect" href="https://fonts.googleapis.com"> \
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> \
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet"> \
+');
+
+let left_body = document.getElementById("ui-bar-body");
 left_body.insertAdjacentHTML("beforeend", ' \
 <div id="PlayerInventory"> \
-    <p>Inventory Test</p> \
-    <ul> \
+    <ul id="PlayerInventoryList"> \
         <li>aa</li> \
         <li>bb</li> \
         <li>cc</li> \
@@ -171,7 +208,7 @@ left_body.insertAdjacentHTML("beforeend", ' \
 &lt;&lt;set $VariableTest = 3&gt;&gt;
 </tw-passagedata><tw-passagedata pid="4" name="Passage 4" tags="" position="775,650" size="100,100">zedlhjkzDBSHCFVBHJDWFBVDWBGV
 Variable is $VariableTest
-    
+
 &lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
