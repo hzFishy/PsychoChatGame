@@ -187,7 +187,23 @@ ul {
 .NoteLink a:hover {
   color: yellow;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
 
 
 let head_body = document.head;
@@ -241,27 +257,39 @@ Variable is $VariableTest
 
 &lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start J1S1 - Salle d&#39;attente" tags="" position="1400,375" size="100,100">//Assis entrain d&#39;attendre//
 
+&lt;&lt;timed 2s&gt;&gt;
+&lt;span class=&#39;fade-in&#39;&gt; \
 &lt;&lt;set $PointsRupture to 0&gt;&gt; \ 
 &lt;&lt;set $J1S1_AttenteQuestions to 0&gt;&gt; \
 [[Aller se servir un café|J1S1 - Salle d&#39;attente (Café)]]
 [[Regarder par la fenêtre|J1S1 - Salle d&#39;attente (Fenetre)]]
-[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]</tw-passagedata><tw-passagedata pid="6" name="J1S1 - Salle d&#39;attente (Café)" tags="" position="1125,600" size="100,100">En observant autour de vous, vous apercevez une cafetière destiné aux gens qui comme vous, attendent. Vous vous levez, en vous approchant vous remarquez que l&#39;objet a été malmené, le plastique est fracturé à plusieurs endroits et semble avoir subit un gros choc. Malgré son état, vous vous servez votre café.
+[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]
+&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="J1S1 - Salle d&#39;attente (Café)" tags="" position="1125,600" size="100,100">En observant autour de vous, vous apercevez une cafetière destiné aux gens qui comme vous, attendent. Vous vous levez, en vous approchant vous remarquez que l&#39;objet a été malmené, le plastique est fracturé à plusieurs endroits et semble avoir subit un gros choc. Malgré son état, vous vous servez votre café.
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
 &lt;&lt;if $J1S1_AttenteQuestions lt 2&gt;&gt; \
 	[[Regarder par la fenêtre|J1S1 - Salle d&#39;attente (Fenetre)]]
 	[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]
 &lt;&lt;else&gt;&gt; \
 	[[Retourner s&#39;assoir|J1S1 - Salle d&#39;attente (Suite)]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="J1S1 - Salle d&#39;attente (Fenetre)" tags="" position="1375,600" size="100,100">Vous jetez un regard distrait vers la fenêtre derrière vous. Elle donne sur une cour bétonnée encerclée de grands murs auquel s&#39;ajoutent des barbelés. La cour est vide, les prisonniers doivent encore être en cellule. 
+&lt;&lt;/if&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="J1S1 - Salle d&#39;attente (Fenetre)" tags="" position="1375,600" size="100,100">Vous jetez un regard distrait vers la fenêtre derrière vous. Elle donne sur une cour bétonnée encerclée de grands murs auquel s&#39;ajoutent des barbelés. La cour est vide, les prisonniers doivent encore être en cellule. 
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
 &lt;&lt;if $J1S1_AttenteQuestions lt 2&gt;&gt; \
 	[[Aller se servir un café|J1S1 - Salle d&#39;attente (Café)]]
 	[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]
 &lt;&lt;else&gt;&gt; \
 	[[Retourner s&#39;assoir|J1S1 - Salle d&#39;attente (Suite)]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="J1S1 - Salle d&#39;attente (Question)" tags="" position="1650,600" size="100,100">Vous décidez de vous approcher de l&#39;accueil espérant que quelqu&#39;un puisse répondre à vos questions. Un homme en uniforme de la prison est derrière un ordinateur et vous jette un regard.
+&lt;&lt;/if&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="J1S1 - Salle d&#39;attente (Question)" tags="" position="1650,600" size="100,100">Vous décidez de vous approcher de l&#39;accueil espérant que quelqu&#39;un puisse répondre à vos questions. Un homme en uniforme de la prison est derrière un ordinateur et vous jette un regard.
 
 - Est-ce que je vais finir par savoir ce que je fais là ? demandez-vous avec un poil d&#39;agacement dans la voix.
 
@@ -270,20 +298,28 @@ Variable is $VariableTest
 Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attendre
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
 &lt;&lt;if $J1S1_AttenteQuestions lt 2&gt;&gt; \
 	[[Regarder par la fenêtre|J1S1 - Salle d&#39;attente (Fenetre)]]
 	[[Aller se servir un café|J1S1 - Salle d&#39;attente (Café)]]
 &lt;&lt;else&gt;&gt; \
 	[[Retourner s&#39;assoir|J1S1 - Salle d&#39;attente (Suite)]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="J1S1 - Salle d&#39;attente (Suite)" tags="" position="1400,850" size="100,100">Finalement, la porte d&#39;un bureau s&#39;ouvre et dans son encadrement se tient un homme d&#39;une quarantaine d&#39;année . Il est en uniforme de police, son badge fièrement accroché à sa poitrine. Il semble extenué, ses cernes s&#39;étirent sous ses yeux et il semble particulièrement de mauvaise humeur.
+&lt;&lt;/if&gt;&gt;
+&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="J1S1 - Salle d&#39;attente (Suite)" tags="" position="1400,850" size="100,100">Finalement, la porte d&#39;un bureau s&#39;ouvre et dans son encadrement se tient un homme d&#39;une quarantaine d&#39;année . Il est en uniforme de police, son badge fièrement accroché à sa poitrine. Il semble extenué, ses cernes s&#39;étirent sous ses yeux et il semble particulièrement de mauvaise humeur.
 
 - Suivez moi, vous ordonne il d&#39;un ton sec
 
-Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main droite des entailles encore ouvertes. 
+Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main droite des entailles encore ouvertes. Vous vous levez et commencez à le suivre.
 
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
 [[Se préoccuper de sa main blessé|J1S1 - Entrer Bureau Question main]]
 [[Lui demander ce qu&#39;un lieutenant de police fait dans une prison|J1S1 - Entrer Bureau Question Affectation]]
-[[Rester silencieux|J1S1 - Entrer Bureau Se taire]]</tw-passagedata><tw-passagedata pid="10" name="J1S1 - Entrer Bureau Question main" tags="" position="1175,1100" size="100,100">&lt;&lt;set $PointsRupture += 1&gt;&gt;\
+[[Rester silencieux|J1S1 - Entrer Bureau Se taire]]
+&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="J1S1 - Entrer Bureau Question main" tags="" position="1175,1100" size="100,100">&lt;&lt;set $PointsRupture += 1&gt;&gt;\
 - Qu&#39;est ce que vous avez fait à votre main ? questionnez vous tout en vous levant. 
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;
@@ -293,54 +329,98 @@ Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main 
 &lt;&lt;/linkreplace&gt;&gt;
 </tw-passagedata><tw-passagedata pid="11" name="J1S1 - Entrer Bureau Se taire" tags="" position="1625,1100" size="100,100">Vous restez silencieux, le lieutenant n&#39;a pas l&#39;air de vouloir faire la discussion. Il vous invite à rentrer dans le bureau.
 
-[[ [...] |J1S1 - First time bureau]] </tw-passagedata><tw-passagedata pid="12" name="J1S1 - First time bureau" tags="" position="1300,1400" size="100,100">Il explique vaguement la situation : 
-- le criminel inculpé 
-- ces séries de meurtre
-- Besoin profiling
-- Psychiatre précédent
- 
- [[Interroger sur les motifs des crimes|J1S1 - Bureau Questions]]</tw-passagedata><tw-passagedata pid="13" name="J1S1 - Bureau Questions" tags="" position="1300,1625" size="100,100">Réponse froide : 
-&quot;il est fou&quot;
-&quot;les psy précédent ne comprenne pas&quot;
-&quot;il sera condamné a mort si responsable de ces actes&quot;
+[[ [...] |J1S1 - First time bureau]] </tw-passagedata><tw-passagedata pid="12" name="J1S1 - First time bureau" tags="" position="1300,1400" size="100,100">Vous pénétrez dans le bureau, c&#39;est un bureau de fonctionnaire classique dénué de toute affaire personnelle, pas même une photo ou une plante. Le lieutenant s&#39;installe en face de vous.
 
-[[Interroger sur son passé origine social, famille, conjointe ?|J1S1 - Question bureau sur la passé]]
-[[Interroger sur le profils psy : antécédent pyschiatrique... ect|J1S1 - Question bureau profil psy]]
-[[Pourquoi  besoin d&#39;un 3e profiling|J1S1 - Question bureau 3e profiling]]
-</tw-passagedata><tw-passagedata pid="14" name="J1S1 - Question bureau 3e profiling" tags="" position="1650,1800" size="100,100"> les psychiatre ne finisse pas le profiling
- 
-[[Interroger sur son passé origine social, famille, conjointe ?|J1S1 - Question bureau sur la passé]]
-[[Interroger sur le profils psy : antécédent pyschiatrique... ect|J1S1 - Question bureau profil psy]]
-[[Insister pour des précisions]]</tw-passagedata><tw-passagedata pid="15" name="J1S1 - Question bureau sur la passé" tags="" position="1025,1875" size="100,100">Réponse condescante : on vous demande pas de faire sa biographie
+&lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
+- Vous avez du suivre l&#39;histoire du boucher... 
+L&#39;homme laisse la phrase en suspend, il attend une réponse qui ne vient pas, vous le laissez finir. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;&lt;br&gt;
+- 12 meurtres, tous tués de la même manière, continue le lieutenant. Un tueur en série en somme, son jugement s&#39;est terminé il y a peu, il est coupable et sera condamné à mort. Sauf si.... Là encore il laisse sa phrase en suspend. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;&lt;br&gt;
+- Sauf s&#39;il présente une pathologie qui conduirait à une abolition du discernement et qu&#39;une irresponsabilité pénale soit déclaré. Cette fois vous terminez, c&#39;est votre sujet, vous êtes spécialiste en la matière.
+
+Le lieutenant hausse un sourcil.
+
+&lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
+- Sauf s&#39;il n&#39;était pas conscient de ses actes à cause d&#39;une maladie mentale et qu&#39;il soit interné à l&#39;hôpital psychiatrique à la place, clarifiez-vous.
+
+&lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
+- Ouais, répond l&#39;homme. Ça m&#39;enchante pas plus que ça qu&#39;il puisse passer à coté de sa peine mais c&#39;est la loi. Vous êtes le troisième psychiatre qu&#39;on appelle. Etablissez son profil psychologique qu&#39;on en parle plus. 
+
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
+ [[Interroger sur les motifs des crimes|J1S1 - Bureau Questions]]
+&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+</tw-passagedata><tw-passagedata pid="13" name="J1S1 - Bureau Questions" tags="" position="1300,1625" size="100,100">La raison de votre venue est plus clair et votre mission est établi. Vous allez avoir besoin de plus de détails.
+
+- Est ce qu&#39;on sait quoi que ça soit sur son motif ? Questionnez vous tout en sortant un carnet pour prendre des notes.
+
+&lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
+- Nan, pour nous c&#39;est juste un fou.
+
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
+[[Interroger sur son passé|J1S1 - Question bureau sur la passé]]
+[[Interroger sur le profil psychologique|J1S1 - Question bureau profil psy]]
+[[Interroger sur les deux précédents psychiatre|J1S1 - Question bureau 3e profiling]]
+&lt;/span&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/linkreplace&gt;&gt;
+</tw-passagedata><tw-passagedata pid="14" name="J1S1 - Question bureau 3e profiling" tags="" position="1650,1800" size="100,100">- Vous avez mentionné que j&#39;étais le troisième psychiatre, faites-vous remarquer au lieutenant. Qu&#39;en est-il des deux autres ? Leurs dossiers n&#39;étaient-ils pas suffisant?
+
+Le lieutenant semble hésiter quelques secondes avant de répondre.
+
+- Les deux autres n&#39;ont pas pu continuer disons. Vous n&#39;avez pas besoin d&#39;en savoir plus.
+
+[[Interroger sur son passé|J1S1 - Question bureau sur la passé]]
+[[Interroger sur le profil psychologique|J1S1 - Question bureau profil psy]]
+[[Insister pour obtenir des précisions|J1S1 - Question bureau Insister]]
+</tw-passagedata><tw-passagedata pid="15" name="J1S1 - Question bureau sur la passé" tags="" position="1075,1825" size="100,100">- Est ce que vous auriez quelques informations qui pourrait m&#39;être utile sur son passé ? Son enfance, ses parents ? Une conjointe peut être ?
+
+Vous tapotez sur votre carnet avec votre crayon prêt à noter la moindre information.
+
+- Non mais on vous demande pas de faire sa biographie, grogne le lieutenant. Vous me fouillez ce qu&#39;il a dans le crâne et c&#39;est tout.
 
 &lt;&lt;if $PointsRupture lte 0&gt;&gt;
-	[[Réponse diplomatique : j&#39;ai besoin de votre aide svp|J1S1 - Question sur la passé (diplomatique)]]
+	[[Réponse diplomatique|J1S1 - Question sur la passé (diplomatique)]]
 &lt;&lt;else&gt;&gt;
-	[[Réponse diplomatique : j&#39;ai besoin de votre aide svp|J1S1 - Question bureau forcer]]
+	[[Réponse diplomatique|J1S1 - Question bureau forcer]]
 &lt;&lt;/if&gt;&gt;
-[[Réponse pragmatique : je fais mon travaille|J1S1 - Question bureau forcer][$PointsRupture += 1]]</tw-passagedata><tw-passagedata pid="16" name="J1S1 - Question bureau profil psy" tags="" position="1325,1875" size="100,100">Réponse FROIDE : &quot;Aucune&quot;
+[[Réponse pragmatique|J1S1 - Question bureau forcer][$PointsRupture += 1]]</tw-passagedata><tw-passagedata pid="16" name="J1S1 - Question bureau profil psy" tags="" position="1325,1925" size="100,100">- Est ce qu&#39;il a quelconque antécédent psychiatrique ? Des séjours à l&#39;asile ?
+Le lieutenant lève les yeux au ciel. 
 
-[[ [...]|J1S1 - Question bureau forcer]]</tw-passagedata><tw-passagedata pid="17" name="Insister pour des précisions" tags="" position="1650,1975" size="100,100">Réponse colérique : ce n&#39;est pas notre affaire.
-&lt;&lt;set $PointsRupture += 1&gt;&gt;
+- J&#39;ai l&#39;air d&#39;un psy ? s&#39;agace-t-il. Si je le savais, vous ne seriez pas là.
 
-[[Interroger sur son passé origine social, famille, conjointe ?|J1S1 - Question bureau sur la passé]]
-[[Interroger sur le profils psy : antécédent pyschiatrique... ect|J1S1 - Question bureau profil psy]]
-[[Insister encore : pourquoi il a peur|J1 S1 - Question sur la peur]]</tw-passagedata><tw-passagedata pid="18" name="J1 S1 - Question sur la peur" tags="" position="1650,2125" size="100,100">Réponse colérique +++ : 
-lache info clé sur les psychiatre
-nous ordonne d&#39;aller lui poser les questions nous même
-&lt;&lt;set $PointsRupture += 1&gt;&gt;
+[[ [...]|J1S1 - Question bureau forcer]]</tw-passagedata><tw-passagedata pid="17" name="J1S1 - Question bureau Insister" tags="" position="1700,1975" size="100,100">Vous sentez qu&#39;il ne vous dit pas tout. 
+
+- Comment ça &quot;n&#39;ont pas pu continuer&quot; ? J&#39;ai besoin de connaître précisément les raisons.
+
+- Vous êtes là pour faire le profil du criminel ou des psychiatres ? s&#39;irrite le lieutenant. Concentrez vous sur votre mission, c&#39;est tout. 
+&lt;&lt;set $PointsRupture += 1&gt;&gt; \
+
+[[Interroger sur son passé|J1S1 - Question bureau sur la passé]]
+[[Interroger sur le profil psychologique|J1S1 - Question bureau profil psy]]
+[[Insister une nouvelle fois|J1 S1 - Question sur la peur]]</tw-passagedata><tw-passagedata pid="18" name="J1 S1 - Question sur la peur" tags="" position="1675,2150" size="100,100">- C&#39;est une information capitale, je suis désolé mais je suis obligé d&#39;insister lieutenant.
+ L&#39;homme serre les jointures de ses mains et ses phalanges deviennent blanches avant de finalement répondre.
+
+- Le premier est en prison, vous êtes content ? Le deuxième, on a plus aucune nouvelle, il ne répond plus et refuse de voir qui que ce soit, lâche l&#39;officier à contre cœur. Vous demanderez à votre criminel, il en saura surement plus.
+
+&lt;&lt;set $PointsRupture += 1&gt;&gt;\
 [[Demander à voir le criminel]]
 </tw-passagedata><tw-passagedata pid="19" name="Demander à voir le criminel" tags="" position="1250,2550" size="100,100">...
 
 [[ [...]|J1S2 - Première visite (Start)]]</tw-passagedata><tw-passagedata pid="20" name="J1S1 - Question sur la passé (diplomatique)" tags="" position="625,2100" size="100,100">Réponse ouverte : donne un indice clé pour le dossier profiling
 
-[[Demander à voir le criminel]]</tw-passagedata><tw-passagedata pid="21" name="J1S1 - Question bureau forcer" tags="" position="1150,2075" size="100,100">Réponse FROIDE : 
+[[Demander à voir le criminel]]</tw-passagedata><tw-passagedata pid="21" name="J1S1 - Question bureau forcer" tags="" position="1325,2150" size="100,100">Le lieutenant vient se redresser sur son siège.
 
-pas de profiling, donc coincé sur l&#39;affaire
-mets la pression pour bacler notre travaille
+- Je vais être clair, je suis coincé sur cette affaire tant que son profil n&#39;est pas fait, j&#39;ai pas le temps de jouer au psychologue. Dépêchez vous de remplir ce dossier, dessinez dedans même si vous le voulez mais faites ça vite.
 
 [[Réponse dents pour dents : &quot;j&#39;aime pas les kuff non plus, enmener moi voir le criminel maintenant qu&#39;on accélère&quot;|J1S1 - Question bureau forcer (Suite)][$PointsRupture += 1]]
-[[Réponse compatissante : Rappeler qu&#39;on est pas là pour frener son métier. Demander poliment à cvoir le criminel|J1S1 - Question bureau forcer (Suite)]]</tw-passagedata><tw-passagedata pid="22" name="J1S1 - Question bureau forcer (Suite)" tags="" position="1175,2225" size="100,100">Acceptation reticente : 
+[[Réponse compatissante : Rappeler qu&#39;on est pas là pour frener son métier. Demander poliment à cvoir le criminel|J1S1 - Question bureau forcer (Suite)]]</tw-passagedata><tw-passagedata pid="22" name="J1S1 - Question bureau forcer (Suite)" tags="" position="1250,2350" size="100,100">Acceptation reticente : 
 briefing sujet a pas aborder
 
 [[Demander à voir le criminel]]</tw-passagedata><tw-passagedata pid="23" name="J1S2 - Première visite (Start)" tags="" position="1225,3000" size="100,100">Suivre le lieutenant dans la prison : description de l&#39;enviro délabré
