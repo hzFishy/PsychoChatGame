@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Profiling" startnode="5" creator="Twine" creator-version="2.12.0" format="SugarCube" format-version="2.37.3" ifid="DDCFFE5E-D6FA-4F6A-AA88-8A33835202BE" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">:root {
+	<tw-storydata name="Profiling" startnode="5" creator="Twine" creator-version="2.12.0" format="SugarCube" format-version="2.37.3" ifid="DDCFFE5E-D6FA-4F6A-AA88-8A33835202BE" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">:root {
   --LeftBodyWidth: 400px;
 }
 
@@ -112,7 +112,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   display: None;
 }
 
-a {
+a, .passage {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
@@ -150,15 +150,16 @@ a:hover {
   text-align: center;
 }
 
+
 #PlayerInventory {
-  background-image: url('https://github.com/hzFishy/PsychoChatGame/blob/main/content/ConfidentialPaperBackground.png?raw=true');
+  background-image: url('https://github.com/hzFishy/PsychoChatGame/blob/main/content/GenericPaperBackground.png?raw=true');
   background-size: 380px;
   background-repeat: no-repeat;
   background-position: center;
   height: 500px;
   text-align: left;
 }
-
+/*
 #PlayerInventoryList {
   padding-top: 120px;
   padding-left: 25px;
@@ -179,7 +180,7 @@ a:hover {
   margin-left: 10px;
   margin-right: 10px;
 }
-
+*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -220,6 +221,7 @@ head_body.insertAdjacentHTML("beforeend", ' \
 ');
 
 let left_body = document.getElementById("ui-bar-body");
+/*
 left_body.insertAdjacentHTML("beforeend", ' \
 <div id="PlayerInventory"> \
     <ul id="PlayerInventoryList"> \
@@ -240,7 +242,23 @@ setup.UpdatePlayerInventoryList = function() {
 setup.AddItemToPlayerInventoryList = function(ItemName) {
   PlayerInventoryListArray.push(ItemName);
   setup.UpdatePlayerInventoryList();
-};</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
+};
+*/
+
+left_body.insertAdjacentHTML("beforeend", ' \
+<div id="PlayerInventory"> \
+    <div id="PlayerInventoryTab1"> \
+       Tab1 \
+    </div> \
+    <div id="PlayerInventoryTab2"> \
+       Tab2 \
+    </div> \
+    <div id="PlayerInventoryTab3"> \
+       Tab3 \
+    </div> \
+</div> \
+');
+let PlayerInventory = document.getElementById("PlayerInventory");</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
 
 Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;&lt;&lt;script&gt;&gt;setup.AddItemToPlayerInventoryList(&quot;jambon&quot;);&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt; bi bla blou
 
@@ -261,7 +279,7 @@ Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;
 </tw-passagedata><tw-passagedata pid="4" name="Passage 4" tags="" position="325,325" size="100,100">zedlhjkzDBSHCFVBHJDWFBVDWBGV
 Variable is $VariableTest
 
-&lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start J1S1 - Salle d&#39;attente" tags="" position="1400,375" size="100,100">//Assis entrain d&#39;attendre//
+&lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start J1S1 - Salle d&#39;attente" tags="" position="1400,375" size="100,100">//Vous êtes assis entrain d&#39;attendre//
 
 &lt;&lt;timed 2s&gt;&gt;
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -391,11 +409,11 @@ Vous tapotez sur votre carnet avec votre crayon prêt à noter la moindre inform
 
 - Non mais on vous demande pas de faire sa biographie, grogne le lieutenant. Vous me fouillez ce qu&#39;il a dans le crâne et c&#39;est tout.
 
-&lt;&lt;if $PointsRupture lte 0&gt;&gt;
+&lt;&lt;if $PointsRupture lte 0&gt;&gt; \
 	[[Réponse diplomatique|J1S1 - Question sur la passé (diplomatique 1)]]
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt; \
 	[[Réponse diplomatique|J1S1 - Question sur la passé (diplomatique 2)]]
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt; \
 [[Réponse pragmatique|J1S1 - Question bureau sur le passé (pragmatique)]]</tw-passagedata><tw-passagedata pid="16" name="J1S1 - Question bureau profil psy" tags="" position="1325,1925" size="100,100">- Est ce qu&#39;il a quelconque antécédent psychiatrique ? Des séjours à l&#39;asile ?
 Le lieutenant lève les yeux au ciel. 
 
@@ -419,7 +437,7 @@ Le lieutenant lève les yeux au ciel. 
 [[Demander à voir le criminel|J1S1 - Fin bureau]]
 </tw-passagedata><tw-passagedata pid="19" name="J1S1 - Fin bureau" tags="" position="1275,2700" size="100,100">Le lieutenant se lève rapidement, il récupère ses affaires et se dirige vers la porte.
 
-&lt;&lt;link &quot;//Suivre le lieutenant//&quot; &quot;J1S2 - Première visite (Start)&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
+[[Suivre le lieutenant|J1S2 - Première visite (Start)]]
 </tw-passagedata><tw-passagedata pid="20" name="J1S1 - Question sur la passé (diplomatique 1)" tags="" position="750,2050" size="100,100">- Lieutenant je comprends votre point de vue, argumentez-vous. Cette histoire traine depuis trop longtemps pour vous mais plus vous m&#39;aidez, plus tôt l&#39;affaire sera classée,
 
 Le lieutenant souffle mais semble conscilliant.
