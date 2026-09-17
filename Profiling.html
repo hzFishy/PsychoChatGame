@@ -242,7 +242,7 @@ Variable is $VariableTest
 &lt;&lt;set $J1S1_AttenteQuestions to 0&gt;&gt; \
 [[Aller se servir un café|J1S1 - Salle d&#39;attente (Café)]]
 [[Regarder par la fenêtre|J1S1 - Salle d&#39;attente (Fenetre)]]
-[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]</tw-passagedata><tw-passagedata pid="6" name="J1S1 - Salle d&#39;attente (Café)" tags="" position="1125,600" size="100,100">En observant autour de vous, vous apercevez une cafetière destiné aux gens qui comme vous, attendent. Vous vous levez, en vous approchant vous remarquez que l&#39;objet a été malmené, le plastique est fracturé à plusieurs endroits et semble avoir subit un gros choc. Malgré son état, vous vous servez votre café et retournez vous assoir.
+[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]</tw-passagedata><tw-passagedata pid="6" name="J1S1 - Salle d&#39;attente (Café)" tags="" position="1125,600" size="100,100">En observant autour de vous, vous apercevez une cafetière destiné aux gens qui comme vous, attendent. Vous vous levez, en vous approchant vous remarquez que l&#39;objet a été malmené, le plastique est fracturé à plusieurs endroits et semble avoir subit un gros choc. Malgré son état, vous vous servez votre café.
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
 &lt;&lt;if $J1S1_AttenteQuestions lt 2&gt;&gt; \
@@ -250,11 +250,7 @@ Variable is $VariableTest
 	[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]
 &lt;&lt;else&gt;&gt; \
 	[[Retourner s&#39;assoir|J1S1 - Salle d&#39;attente (Suite)]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="J1S1 - Salle d&#39;attente (Fenetre)" tags="" position="1375,600" size="100,100">Vous décidez de vous approcher de l&#39;accueil espérant que quelqu&#39;un puisse répondre à vos questions. Un homme en uniforme de la prison est derrière un ordinateur et vous jette un regard.
-
-- Est-ce que je vais finir par savoir ce que je fais là ? demandez-vous avec un poil d&#39;agacement dans la voix.
-
-- Je suis désolé, ce n&#39;est pas à moi de faire ça, vous répond l&#39;hôte d&#39;une voix mal assuré, tout ce que je peux vous dire c&#39;est qu&#39;il ne va pas tarder.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="J1S1 - Salle d&#39;attente (Fenetre)" tags="" position="1375,600" size="100,100">Vous jetez un regard distrait vers la fenêtre derrière vous. Elle donne sur une cour bétonnée encerclée de grands murs auquel s&#39;ajoutent des barbelés. La cour est vide, les prisonniers doivent encore être en cellule. 
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
 &lt;&lt;if $J1S1_AttenteQuestions lt 2&gt;&gt; \
@@ -262,7 +258,13 @@ Variable is $VariableTest
 	[[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]
 &lt;&lt;else&gt;&gt; \
 	[[Retourner s&#39;assoir|J1S1 - Salle d&#39;attente (Suite)]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="J1S1 - Salle d&#39;attente (Question)" tags="" position="1650,600" size="100,100">Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attendre
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="J1S1 - Salle d&#39;attente (Question)" tags="" position="1650,600" size="100,100">Vous décidez de vous approcher de l&#39;accueil espérant que quelqu&#39;un puisse répondre à vos questions. Un homme en uniforme de la prison est derrière un ordinateur et vous jette un regard.
+
+- Est-ce que je vais finir par savoir ce que je fais là ? demandez-vous avec un poil d&#39;agacement dans la voix.
+
+- Je suis désolé, ce n&#39;est pas à moi de faire ça, vous répond l&#39;hôte d&#39;une voix mal assuré, tout ce que je peux vous dire c&#39;est qu&#39;il ne va pas tarder.
+
+Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attendre
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
 &lt;&lt;if $J1S1_AttenteQuestions lt 2&gt;&gt; \
@@ -286,7 +288,8 @@ Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main 
 
 [[ [...]|J1S1 - First time bureau]]
 &lt;&lt;/linkreplace&gt;&gt;
-</tw-passagedata><tw-passagedata pid="11" name="J1S1 - Entrer Bureau Se taire" tags="" position="1625,1100" size="100,100">nous invite à rentrer dans le bureau. 
+</tw-passagedata><tw-passagedata pid="11" name="J1S1 - Entrer Bureau Se taire" tags="" position="1625,1100" size="100,100">Vous restez silencieux, le lieutenant n&#39;a pas l&#39;air de vouloir faire la discussion. Il vous invite à rentrer dans le bureau.
+
 [[ [...] |J1S1 - First time bureau]] </tw-passagedata><tw-passagedata pid="12" name="J1S1 - First time bureau" tags="" position="1300,1400" size="100,100">Il explique vaguement la situation : 
 - le criminel inculpé 
 - ces séries de meurtre
@@ -410,7 +413,9 @@ S&#39;adresse au psy : Demande si on a ce qu&#39;on veut
 
 [[J1S2 - Première discussion Présentation Partir]]</tw-passagedata><tw-passagedata pid="44" name="J1S2 - Première discussion Présentation Partir" tags="" position="1750,4950" size="100,100">[[Complaisance : pourquoi vous le laisser dans le noir ?|J1S2 - Fin de la première visite]]</tw-passagedata><tw-passagedata pid="45" name="J1S2 - Première discussion Présentation (Suite 2)" tags="" position="1925,4775" size="100,100">Réponse cordial : &quot;nous auront tout le temps de discuter&quot;
 
-[[ [...]|J1S2 - Première discussion Présentation Partir]]</tw-passagedata><tw-passagedata pid="46" name="J1 S2 - Fin de la première visite" tags="" position="875,5450" size="100,100"></tw-passagedata><tw-passagedata pid="47" name="J1S1 - Entrer Bureau Question Affectation" tags="" position="1400,1100" size="100,100">répond ironiquement  nous invite à rentrer dans le bureau. 
+[[ [...]|J1S2 - Première discussion Présentation Partir]]</tw-passagedata><tw-passagedata pid="46" name="J1 S2 - Fin de la première visite" tags="" position="875,5450" size="100,100"></tw-passagedata><tw-passagedata pid="47" name="J1S1 - Entrer Bureau Question Affectation" tags="" position="1400,1100" size="100,100">- Je n&#39;aurais pas imaginé rencontrer un officier dans un tel lieu, déclarez-vous au lieutenant, qu&#39;est ce qui vous amène dans cette prison?
+
+- Croyez moi, ça ne m&#39;enchante pas plus que vous, répond-il d&#39;un air resigné, entrez qu&#39;on en finisse au plus vite.
 
 [[ [...] |J1S1 - First time bureau]]</tw-passagedata><tw-passagedata pid="48" name="Test Dialogue" tags="" position="225,550" size="100,100">
 Text 1
