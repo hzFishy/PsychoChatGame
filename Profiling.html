@@ -220,6 +220,10 @@ ul {
 .PlayerInventoryTab {
   display: none; 
   text-align: left;
+  overflow-y: scroll;
+  height: 350px;
+  width: 270px;
+  scrollbar-width: none;
 }
 
 #PlayerInventoryBoxTabs {
@@ -249,6 +253,30 @@ ul {
 
 .tab-selected {
   color: red;
+}
+
+#PlayerInventoryTab1 p a {
+  color: black;
+}
+
+#PlayerInventoryTab1 p a:hover {
+  text-decoration: underline;
+}
+
+#PlayerInventoryTab1 p a.yes {
+  text-decoration: underline;
+}
+
+#PlayerInventoryTab1 p a.yes:hover {
+  text-decoration: line-through;
+}
+
+#PlayerInventoryTab1 p a.no {
+  text-decoration: line-through;
+}
+
+#PlayerInventoryTab1 p a.no:hover {
+  text-decoration: none;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
 
 
@@ -311,6 +339,21 @@ function ChangeDisplayedPlayerTab(TabId) {
   }
 }
 
+function ClickedOnTypeTitle(element) {
+  console.log(element);
+  if (!element.classList.contains("yes") && !element.classList.contains("no")) {
+    element.classList.add("yes");
+  }
+  else if (element.classList.contains("yes") ) {
+    element.classList.remove("yes");
+    element.classList.add("no");
+  }
+  else if (element.classList.contains("no")) {
+    element.classList.remove("no");
+  }
+}
+
+
 left_body.insertAdjacentHTML("beforeend", ' \
 <div id="PlayerInventory"> \
     <div id="PlayerInventoryBox"> \
@@ -322,15 +365,32 @@ left_body.insertAdjacentHTML("beforeend", ' \
       <div id="PlayerInventoryTab1" class="PlayerInventoryTab"> \
          <p>Psychopathe</p> \
          <p> \
-            - Mensonge pathologique : Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
-            - Emoussement affectif : diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
-            - Manipulation et charme superficiel : Elle utilise un grand charisme pour séduire, tromper et obtenir ce qu\'elle veut. \
+- <a class="ClickableTitle">Mensonge pathologique</a> : \
 <br> \
-            Origine :  \
-            - Traumatismes et négligence : enfance difficile, maltraitances, des abus ou un manque d\'affection et de stabilité parentale. \
-            - Anatomie du cerveau : différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale (lié à la gestion de la peur, l\'empathie et la réactivité sociale) \
+Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
 <br> \
-			Maladie mentale : non condamnable -------------------- \
+<br> \
+- Emoussement affectif : \
+<br> \
+Diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
+<br> \
+<br> \
+ - Manipulation et charme superficiel : \
+<br> \Elle utilise un grand charisme pour séduire, tromper et obtenir ce qu\'elle veut. \
+<br> \
+<br> \
+Origine :  \
+<br> \
+- Traumatismes et négligence : \
+Enfance difficile, maltraitances, des abus ou un manque d\'affection et de stabilité parentale. \
+<br> \
+<br> \
+- Anatomie du cerveau : \
+<br> \
+Différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale (lié à la gestion de la peur, l\'empathie et la réactivité sociale) \
+<br> \
+<br> \
+Maladie mentale : non condamnable -------------------- \
          </p> \
       </div> \
       <div id="PlayerInventoryTab2" class="PlayerInventoryTab"> \
@@ -363,7 +423,12 @@ document.getElementById("ChangeDisplayedPlayerTab1").addEventListener("click", f
 document.getElementById("ChangeDisplayedPlayerTab2").addEventListener("click", function() { ChangeDisplayedPlayerTab(2) }, false);
 document.getElementById("ChangeDisplayedPlayerTab3").addEventListener("click", function() { ChangeDisplayedPlayerTab(3) }, false);
 // Default
-ChangeDisplayedPlayerTab(1);</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
+ChangeDisplayedPlayerTab(1);
+
+const ClickableTitles = document.getElementsByClassName("ClickableTitle");
+for (const element of ClickableTitles) {
+  element.addEventListener("click", function(event) { ClickedOnTypeTitle(event.target) }, false);
+}</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
 
 Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;&lt;&lt;script&gt;&gt;setup.AddItemToPlayerInventoryList(&quot;jambon&quot;);&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt; bi bla blou
 
