@@ -159,19 +159,23 @@ a:hover {
   height: 500px;
   text-align: left;
 }
-/*
-#PlayerInventoryList {
-  padding-top: 120px;
-  padding-left: 25px;
+
+#PlayerInventoryBox {
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
 }
 
-#PlayerInventory p, #PlayerInventory li {
+#PlayerInventory p {
   color: black;
   font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
+  font-size: 15px;
 }
 
+/*
 #PlayerInventory p {
   text-align: center;
 }
@@ -181,6 +185,7 @@ a:hover {
   margin-right: 10px;
 }
 */
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -210,6 +215,40 @@ ul {
 	100% {
 		opacity: 1;
 	}
+}
+
+.PlayerInventoryTab {
+  display: none; 
+  text-align: left;
+}
+
+#PlayerInventoryBoxTabs {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#PlayerInventoryBoxTabs button {
+  border: none;
+  background-color: transparent;
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#PlayerInventoryBoxTabs button:not(.tab-selected) {
+ color: black;
+}
+
+.tab-show {
+  display: block;
+}
+
+.tab-selected {
+  color: red;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
 
 
@@ -245,20 +284,86 @@ setup.AddItemToPlayerInventoryList = function(ItemName) {
 };
 */
 
+function ChangeDisplayedPlayerTab(TabId) {
+  if (TabId == 1) {
+    document.getElementById("ChangeDisplayedPlayerTab1").classList.add("tab-selected");
+    document.getElementById("ChangeDisplayedPlayerTab2").classList.remove("tab-selected");
+    document.getElementById("ChangeDisplayedPlayerTab3").classList.remove("tab-selected");
+    document.getElementById("PlayerInventoryTab1").classList.add("tab-show");
+    document.getElementById("PlayerInventoryTab2").classList.remove("tab-show");
+    document.getElementById("PlayerInventoryTab3").classList.remove("tab-show");
+  }
+  else if (TabId == 2) {
+    document.getElementById("ChangeDisplayedPlayerTab2").classList.add("tab-selected");
+    document.getElementById("ChangeDisplayedPlayerTab1").classList.remove("tab-selected");
+    document.getElementById("ChangeDisplayedPlayerTab3").classList.remove("tab-selected");
+    document.getElementById("PlayerInventoryTab2").classList.add("tab-show");
+    document.getElementById("PlayerInventoryTab1").classList.remove("tab-show");
+    document.getElementById("PlayerInventoryTab3").classList.remove("tab-show");
+  }
+  else if (TabId == 3) {
+    document.getElementById("ChangeDisplayedPlayerTab3").classList.add("tab-selected");
+    document.getElementById("ChangeDisplayedPlayerTab1").classList.remove("tab-selected");
+    document.getElementById("ChangeDisplayedPlayerTab2").classList.remove("tab-selected");
+    document.getElementById("PlayerInventoryTab3").classList.add("tab-show");
+    document.getElementById("PlayerInventoryTab1").classList.remove("tab-show");
+    document.getElementById("PlayerInventoryTab2").classList.remove("tab-show");
+  }
+}
+
 left_body.insertAdjacentHTML("beforeend", ' \
 <div id="PlayerInventory"> \
-    <div id="PlayerInventoryTab1"> \
-       Tab1 \
-    </div> \
-    <div id="PlayerInventoryTab2"> \
-       Tab2 \
-    </div> \
-    <div id="PlayerInventoryTab3"> \
-       Tab3 \
+    <div id="PlayerInventoryBox"> \
+      <div id="PlayerInventoryBoxTabs"> \
+         <button id="ChangeDisplayedPlayerTab1"><b>Type 1</b></button> \
+         <button id="ChangeDisplayedPlayerTab2"><b>Type 2</b></button> \
+         <button id="ChangeDisplayedPlayerTab3"><b>Type 3</b></button> \
+      </div> \
+      <div id="PlayerInventoryTab1" class="PlayerInventoryTab"> \
+         <p>Psychopathe</p> \
+         <p> \
+            - Mensonge pathologique : Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
+            - Emoussement affectif : diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
+            - Manipulation et charme superficiel : Elle utilise un grand charisme pour séduire, tromper et obtenir ce qu\'elle veut. \
+<br> \
+            Origine :  \
+            - Traumatismes et négligence : enfance difficile, maltraitances, des abus ou un manque d\'affection et de stabilité parentale. \
+            - Anatomie du cerveau : différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale (lié à la gestion de la peur, l\'empathie et la réactivité sociale) \
+<br> \
+			Maladie mentale : non condamnable -------------------- \
+         </p> \
+      </div> \
+      <div id="PlayerInventoryTab2" class="PlayerInventoryTab"> \
+         <p>Schizophrénie paranoïde</p> \
+         <p> \
+            - Délires de persécution : sentiment d\'être espionné, menacé, suivi ou qu\'un complot est formé contre soi. \
+            - Hallucinations auditives : fait d\'entendre des voix qui insultent, commentent les actes ou donnent des ordres. \
+            - Emoussement affectif : diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
+            - Retrait social : isolement et repli sur soi, la personne délaissant ses proches et ses activités. \
+<br> \
+            Origine : \
+            Traumatismes et négligence : enfance difficile, maltraitances, des abus ou un manque d\'affection et de stabilité parentale. \
+<br> \
+            Héréditaire \
+		 </p> \
+      </div> \
+      <div id="PlayerInventoryTab3" class="PlayerInventoryTab"> \
+         <p>Trouble explosif intermittent</p> \
+         <p> \
+            Crises démesurées : hurlements, disputes violentes, bris d\'objets ou agressions physiques. \
+Caractère impulsif : les explosions ne sont pas préméditées et ne visent pas à obtenir un avantage ou un objet précis.\
+Culpabilité : un sentiment de remords, de honte ou d\'épuisement suit généralement l\'épisode agressif.\
+         </p> \
+      </div> \
     </div> \
 </div> \
 ');
-let PlayerInventory = document.getElementById("PlayerInventory");</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
+let PlayerInventory = document.getElementById("PlayerInventory");
+document.getElementById("ChangeDisplayedPlayerTab1").addEventListener("click", function() { ChangeDisplayedPlayerTab(1) }, false);
+document.getElementById("ChangeDisplayedPlayerTab2").addEventListener("click", function() { ChangeDisplayedPlayerTab(2) }, false);
+document.getElementById("ChangeDisplayedPlayerTab3").addEventListener("click", function() { ChangeDisplayedPlayerTab(3) }, false);
+// Default
+ChangeDisplayedPlayerTab(1);</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
 
 Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;&lt;&lt;script&gt;&gt;setup.AddItemToPlayerInventoryList(&quot;jambon&quot;);&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt; bi bla blou
 
