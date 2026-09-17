@@ -241,6 +241,7 @@ ul {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
+  font-size: 20px;
 }
 
 #PlayerInventoryBoxTabs button:not(.tab-selected) {
@@ -255,29 +256,32 @@ ul {
   color: red;
 }
 
-#PlayerInventoryTab1 p a {
+.PlayerInventoryTab p a {
   color: black;
 }
 
-#PlayerInventoryTab1 p a:hover {
-  text-decoration: underline;
+.PlayerInventoryTab p a:hover {
+  color: blue;
+  /*text-decoration: underline;*/
 }
 
-#PlayerInventoryTab1 p a.yes {
-  text-decoration: underline;
+.PlayerInventoryTab p a.yes {
+  text-decoration: underline !important;
 }
-
+/*
 #PlayerInventoryTab1 p a.yes:hover {
   text-decoration: line-through;
 }
+*/
 
-#PlayerInventoryTab1 p a.no {
-  text-decoration: line-through;
+.PlayerInventoryTab p a.no {
+  text-decoration: line-through !important;
 }
-
+/*
 #PlayerInventoryTab1 p a.no:hover {
   text-decoration: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
+}
+*/</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
 
 
 let head_body = document.head;
@@ -363,8 +367,10 @@ left_body.insertAdjacentHTML("beforeend", ' \
          <button id="ChangeDisplayedPlayerTab3"><b>Type 3</b></button> \
       </div> \
       <div id="PlayerInventoryTab1" class="PlayerInventoryTab"> \
-         <p>Psychopathe</p> \
-         <p> \
+<p> - - - - - - - - - - - - </p> \
+         <p><b>Psychopathe</b></p> \
+         <p> - - - - - - - - - - - - \
+<br> \
 - <a class="ClickableTitle">Mensonge pathologique</a> : \
 <br> \
 Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
@@ -390,7 +396,9 @@ Enfance difficile, maltraitances, des abus ou un manque d\'affection et de stabi
 Différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale (lié à la gestion de la peur, l\'empathie et la réactivité sociale) \
 <br> \
 <br> \
-Maladie mentale : non condamnable -------------------- \
+Maladie mentale : non condamnable \
+<br> \
+- - - - - - - - - - - - \
          </p> \
       </div> \
       <div id="PlayerInventoryTab2" class="PlayerInventoryTab"> \
