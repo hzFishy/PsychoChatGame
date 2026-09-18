@@ -496,7 +496,10 @@ Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;
 </tw-passagedata><tw-passagedata pid="4" name="Passage 4" tags="" position="325,325" size="100,100">zedlhjkzDBSHCFVBHJDWFBVDWBGV
 Variable is $VariableTest
 
-&lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start J1S1 - Salle d&#39;attente" tags="" position="1400,375" size="100,100">Vous êtes assis à l&#39;accueil du pénitentiel le plus sécurisé de l&#39;Etat. De toute votre carrière de psychiatre, jamais une demande de rendez-vous ne vous a autant plongé dans le brouillard. Vous ne savez pas encore ce que vous faites là au delà du fait que c&#39;est assez important pour qu&#39;on vous demande de ne pas en parler. Vous devez rencontrer quelqu&#39;un ici dans peu de temps, il vous reste encore quelques minutes devant vous.
+&lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start J1S1 - Salle d&#39;attente" tags="" position="1400,375" size="100,100">Vous êtes assis à l&#39;accueil du pénitentiel le plus sécurisé de l&#39;Etat.
+De toute votre carrière de psychiatre, jamais une demande de rendez-vous ne vous a autant plongé dans le brouillard.
+
+Vous ne savez pas encore ce que vous faites là au delà du fait que c&#39;est assez important pour qu&#39;on vous demande de ne pas en parler. Vous devez rencontrer quelqu&#39;un ici dans peu de temps, il vous reste encore quelques minutes devant vous.
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -536,12 +539,12 @@ Variable is $VariableTest
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Est-ce que je vais finir par savoir ce que je fais là ? demandez-vous avec un poil d&#39;agacement dans la voix.
+- « Est-ce que je vais finir par savoir ce que je fais là ? » Demandez-vous avec un poil d&#39;agacement dans la voix.
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Je suis désolé, ce n&#39;est pas à moi de faire ça, vous répond l&#39;hôte d&#39;une voix mal assuré, tout ce que je peux vous dire c&#39;est qu&#39;il ne va pas tarder.
-Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attendre
+- « Je suis désolé, ce n&#39;est pas à moi de faire ça » vous répond l&#39;hôte d&#39;une voix mal assuré, tout ce que je peux vous dire c&#39;est qu&#39;il ne va pas tarder.
+Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attendre.
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -555,12 +558,12 @@ Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attend
 &lt;&lt;/timed&gt;&gt; \
 &lt;&lt;/timed&gt;&gt; \
 &lt;&lt;/linkreplace&gt;&gt; \
-</tw-passagedata><tw-passagedata pid="9" name="J1S1 - Salle d&#39;attente (Suite)" tags="" position="1400,850" size="100,100">Finalement, la porte d&#39;un bureau s&#39;ouvre et dans son encadrement se tient un homme d&#39;une quarantaine d&#39;année . Il est en uniforme de police, son badge fièrement accroché à sa poitrine. Il semble extenué, ses cernes s&#39;étirent sous ses yeux et il semble particulièrement de mauvaise humeur.
+</tw-passagedata><tw-passagedata pid="9" name="J1S1 - Salle d&#39;attente (Suite)" tags="" position="1400,850" size="100,100">Finalement, la porte d&#39;un bureau s&#39;ouvre et dans son encadrement se tient un homme d&#39;une quarantaine d&#39;année. 
+Il est en uniforme de police, son badge fièrement accroché à sa poitrine. Il semble extenué, ses cernes s&#39;étirent sous ses yeux et il semble particulièrement de mauvaise humeur.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Suivez moi, vous ordonne il d&#39;un ton sec
-Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main droite des entailles encore ouvertes. Vous vous levez et commencez à le suivre.
+- « Suivez moi » vous ordonne-t-il d&#39;un ton sec. Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main droite des entailles encore ouvertes. Vous vous levez et commencez à le suivre.
 &lt;/span&gt; \
 
 &lt;&lt;timed 2s&gt;&gt; \
@@ -572,11 +575,11 @@ Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main 
 &lt;&lt;/timed&gt;&gt; \
 &lt;&lt;/linkreplace&gt;&gt;
 </tw-passagedata><tw-passagedata pid="10" name="J1S1 - Entrer Bureau Question main" tags="" position="1175,1100" size="100,100">&lt;&lt;set $PointsRupture += 1&gt;&gt;\
-- Qu&#39;est ce que vous avez fait à votre main ? questionnez vous tout en vous levant. 
+- «Qu&#39;est ce que vous avez fait à votre main ? » questionnez vous tout en vous levant. 
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Si j&#39;avais voulu un médecin j&#39;aurais pris rendez-vous, répond sèchement le lieutenant, maintenant mêlez vous de vos affaires et rentrez dans ce bureau.
+- « Si j&#39;avais voulu un médecin j&#39;aurais pris rendez-vous » répond sèchement le lieutenant. « Maintenant mêlez vous de vos affaires et rentrez dans ce bureau ».
 &lt;/span&gt;
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -591,13 +594,13 @@ Le lieutenant s&#39;installe en face de vous.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Vous avez du suivre l&#39;histoire du boucher... 
+- « Vous avez du suivre l&#39;histoire du boucher...  »
 L&#39;homme laisse la phrase en suspend, il attend une réponse qui ne vient pas, vous le laissez finir. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;
 &lt;span class=&#39;fade-in&#39;&gt;
-- 12 meurtres, tous tués de la même manière, continue le lieutenant. Un tueur en série en somme, son jugement s&#39;est terminé il y a peu, il est coupable et sera condamné à mort. Sauf si.... 
+- « 12 meurtres, tous tués de la même manière, continue le lieutenant. Un tueur en série en somme, son jugement s&#39;est terminé il y a peu, il est coupable et sera condamné à mort. Sauf si....  »
 Là encore il laisse sa phrase en suspend. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;&lt;br&gt;
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Sauf s&#39;il présente une pathologie qui conduirait à une abolition du discernement et qu&#39;une irresponsabilité pénale soit déclaré. 
+- «Sauf s&#39;il présente une pathologie qui conduirait à une abolition du discernement et qu&#39;une irresponsabilité pénale soit déclaré »
 Cette fois vous terminez, c&#39;est votre sujet, vous êtes spécialiste en la matière.
 
 &lt;&lt;timed 1s&gt;&gt; \
@@ -608,11 +611,11 @@ Le lieutenant hausse un sourcil.
 &lt;span class=&#39;fade-in&#39;&gt; \
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Sauf s&#39;il n&#39;était pas conscient de ses actes à cause d&#39;une maladie mentale et qu&#39;il soit interné à l&#39;hôpital psychiatrique à la place, clarifiez-vous.
+- «Sauf s&#39;il n&#39;était pas conscient de ses actes à cause d&#39;une maladie mentale et qu&#39;il soit interné à l&#39;hôpital psychiatrique à la place, clarifiez-vous  »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Ouais, répond l&#39;homme. Ça m&#39;enchante pas plus que ça qu&#39;il puisse passer à coté de sa peine mais c&#39;est la loi. Vous êtes le troisième psychiatre qu&#39;on appelle. Etablissez son profil psychologique qu&#39;on en parle plus. 
+- « Ouais » répond l&#39;homme. « Ça m&#39;enchante pas plus que ça qu&#39;il puisse passer à coté de sa peine mais c&#39;est la loi. Vous êtes le troisième psychiatre qu&#39;on appelle. Etablissez son profil psychologique qu&#39;on en parle plus »
 &lt;&lt;script&gt;&gt;setup.DisplayDocumentUI()&lt;&lt;/script&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
@@ -636,12 +639,12 @@ Le lieutenant hausse un sourcil.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Est ce qu&#39;on sait quoi que ça soit sur son motif ? 
+- «Est ce qu&#39;on sait quoi que ça soit sur son motif ? »
 Questionnez vous tout en sortant un carnet pour prendre des notes.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Nan, pour nous c&#39;est juste un fou.
+- « Nan, pour nous c&#39;est juste un fou »
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -652,12 +655,12 @@ Questionnez vous tout en sortant un carnet pour prendre des notes.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/linkreplace&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="J1S1 - Question bureau 3e profiling" tags="" position="1650,1800" size="100,100">- Vous avez mentionné que j&#39;étais le troisième psychiatre, faites-vous remarquer au lieutenant. Qu&#39;en est-il des deux autres ? Leurs dossiers n&#39;étaient-ils pas suffisant?
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="J1S1 - Question bureau 3e profiling" tags="" position="1650,1800" size="100,100">- « Vous avez mentionné que j&#39;étais le troisième psychiatre » faites-vous remarquer au lieutenant. « Qu&#39;en est-il des deux autres ? Leurs dossiers n&#39;étaient-ils pas suffisant ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Le lieutenant semble hésiter quelques secondes avant de répondre.
-- Les deux autres n&#39;ont pas pu continuer disons. Vous n&#39;avez pas besoin d&#39;en savoir plus.
+- « Les deux autres n&#39;ont pas pu continuer disons. Vous n&#39;avez pas besoin d&#39;en savoir plus »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -667,7 +670,7 @@ Le lieutenant semble hésiter quelques secondes avant de répondre.
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="J1S1 - Question bureau sur le passé" tags="" position="1075,1825" size="100,100">- Est ce que vous auriez quelques informations qui pourrait m&#39;être utile sur son passé ? Son enfance, ses parents ? Une conjointe peut être ?
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="J1S1 - Question bureau sur le passé" tags="" position="1075,1825" size="100,100">- « Est ce que vous auriez quelques informations qui pourrait m&#39;être utile sur son passé ? Son enfance, ses parents ? Une conjointe peut être ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -676,7 +679,7 @@ Vous tapotez sur votre carnet avec votre crayon prêt à noter la moindre inform
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Non mais on vous demande pas de faire sa biographie, grogne le lieutenant. Vous me fouillez ce qu&#39;il a dans le crâne et c&#39;est tout.
+- « Non mais on vous demande pas de faire sa biographie » grogne le lieutenant. « Vous me fouillez ce qu&#39;il a dans le crâne et c&#39;est tout »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -691,12 +694,12 @@ Vous tapotez sur votre carnet avec votre crayon prêt à noter la moindre inform
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="J1S1 - Question bureau profil psy" tags="" position="1325,1925" size="100,100">- Est ce qu&#39;il a quelconque antécédent psychiatrique ? Des séjours à l&#39;asile ?
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="J1S1 - Question bureau profil psy" tags="" position="1325,1925" size="100,100">- « Est ce qu&#39;il a quelconque antécédent psychiatrique ? Des séjours à l&#39;asile ? »
 Le lieutenant lève les yeux au ciel. 
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- J&#39;ai l&#39;air d&#39;un psy ? s&#39;agace-t-il. Si je le savais, vous ne seriez pas là.
+- « J&#39;ai l&#39;air d&#39;un psy ? s&#39;agace-t-il. Si je le savais, vous ne seriez pas là »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -708,11 +711,11 @@ Le lieutenant lève les yeux au ciel. 
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Comment ça &quot;n&#39;ont pas pu continuer&quot; ? J&#39;ai besoin de connaître précisément les raisons.
+- « Comment ça &quot;n&#39;ont pas pu continuer&quot; ? J&#39;ai besoin de connaître précisément les raisons »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Vous êtes là pour faire le profil du criminel ou des psychiatres ? s&#39;irrite le lieutenant. Concentrez vous sur votre mission, c&#39;est tout. 
+- « Vous êtes là pour faire le profil du criminel ou des psychiatres ? » s&#39;irrite le lieutenant. « Concentrez vous sur votre mission, c&#39;est tout »
 &lt;&lt;set $PointsRupture += 1&gt;&gt; \
 
 &lt;&lt;timed 2s&gt;&gt; \
@@ -725,12 +728,12 @@ Le lieutenant lève les yeux au ciel. 
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="J1 S1 - Question sur la peur" tags="" position="1675,2150" size="100,100">- C&#39;est une information capitale, je suis désolé mais je suis obligé d&#39;insister lieutenant.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="J1 S1 - Question sur la peur" tags="" position="1675,2150" size="100,100">- « C&#39;est une information capitale, je suis désolé mais je suis obligé d&#39;insister lieutenant ».
 L&#39;homme serre les jointures de ses mains et ses phalanges deviennent blanches avant de finalement répondre.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Le premier est en prison, vous êtes content ? Le deuxième, on a plus aucune nouvelle, il ne répond plus et refuse de voir qui que ce soit, lâche l&#39;officier à contre cœur. Vous demanderez à votre criminel, il en saura surement plus.
+- « Le premier est en prison, vous êtes content ? Le deuxième, on a plus aucune nouvelle, il ne répond plus et refuse de voir qui que ce soit » lâche l&#39;officier à contre cœur. « Vous demanderez à votre criminel, il en saura surement plus »
 &lt;&lt;set $PointsRupture += 1&gt;&gt;\
 
 &lt;&lt;timed 1s&gt;&gt; \
@@ -746,7 +749,7 @@ L&#39;homme serre les jointures de ses mains et ses phalanges deviennent blanche
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[Suivre le lieutenant|J1S2 - Première visite (Start)]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="J1S1 - Question sur la passé (diplomatique 1)" tags="" position="750,2050" size="100,100">- Lieutenant je comprends votre point de vue, argumentez-vous. Cette histoire traine depuis trop longtemps pour vous mais plus vous m&#39;aidez, plus tôt l&#39;affaire sera classée,
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="J1S1 - Question sur la passé (diplomatique 1)" tags="" position="750,2050" size="100,100">- « Lieutenant je comprends votre point de vue » argumentez-vous. « Cette histoire traine depuis trop longtemps pour vous mais plus vous m&#39;aidez, plus tôt l&#39;affaire sera classée »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -754,7 +757,7 @@ Le lieutenant souffle mais semble conscilliant.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Des mauvaises relations avec sa mère, elle le battait quand il était gosse je crois. Aucune conjointe de connue. Je peux vous emmener le voir si vous voulez en savoir plus.
+- « Des mauvaises relations avec sa mère, elle le battait quand il était gosse je crois. Aucune conjointe de connue. Je peux vous emmener le voir si vous voulez en savoir plus »
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -768,7 +771,7 @@ Le lieutenant souffle mais semble conscilliant.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Je vais être clair, je suis coincé sur cette affaire tant que son profil n&#39;est pas fait, j&#39;ai pas le temps de jouer au psychologue. Dépêchez vous de remplir ce dossier, dessinez dedans même si vous le voulez mais faites ça vite.
+- « Je vais être clair, je suis coincé sur cette affaire tant que son profil n&#39;est pas fait, j&#39;ai pas le temps de jouer au psychologue. Dépêchez vous de remplir ce dossier, dessinez dedans même si vous le voulez mais faites ça vite »
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -781,7 +784,7 @@ Le lieutenant souffle mais semble conscilliant.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Bien, allons voir le boucher alors. déclare-t--il avec une pointe d&#39;ironie dans la voix 
+- « Bien, allons voir le boucher alors » déclare-t-il avec une pointe d&#39;ironie dans la voix 
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -796,11 +799,11 @@ Le lieutenant souffle mais semble conscilliant.
 [[Interroger sur l&#39;état de la prison|J1S2 - Première visite Question état prison]]
 [[Interroger sur les contacts entre le criminel et les prisoniers|J1S2 - Première visite Question contact prisoniers]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="J1S2 - Première visite Question état prison" tags="" position="1075,3075" size="100,100">- Je ne m&#39;attendais pas à un tel environnement... exprimez vous à voix basse 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="J1S2 - Première visite Question état prison" tags="" position="1075,3075" size="100,100">- « Je ne m&#39;attendais pas à un tel environnement... » exprimez vous à voix basse 
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Vu les occupants, c&#39;est pas particulièrement surprenant, exprime le lieutenant avec dégout, ça va être plus propre à partir d&#39;ici, ils sortent jamais ceux là.
+- « Vu les occupants, c&#39;est pas particulièrement surprenant » exprime le lieutenant avec dégout « ça va être plus propre à partir d&#39;ici, ils sortent jamais ceux là »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -808,11 +811,11 @@ Le lieutenant souffle mais semble conscilliant.
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="J1S2 - Première visite Question contact prisoniers" tags="" position="1425,3075" size="100,100">- Est ce qu&#39;il a eu des interactions avec les autres ?
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="J1S2 - Première visite Question contact prisoniers" tags="" position="1425,3075" size="100,100">- « Est ce qu&#39;il a eu des interactions avec les autres ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
--Trop dangereux, il est en isolement complet, vous répond le lieutenant. Il ne voit personne.
+- « Trop dangereux, il est en isolement complet » vous répond le lieutenant. « Il ne voit personne »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -827,7 +830,7 @@ Le lieutenant souffle mais semble conscilliant.
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Le lieutenant passe son badge et se met à parler dans sa barbe.
-- Ces taulards... Y en aurait de la place en prison si c&#39;est moi qui était en charge...
+- « Ces taulards... Y en aurait de la place en prison si c&#39;est moi qui était en charge... »
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 
@@ -861,7 +864,7 @@ Le lieutenant passe son badge et se met à parler dans sa barbe.
 [[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
 [[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]
 </tw-passagedata><tw-passagedata pid="32" name="J1S2 - Première visite (Suite 3)" tags="" position="1300,4125" size="100,100">Le lieutenant ignore purement et simplement notre question, il lève le bras et pointe du doigt quelque chose. La seule cellule de l&#39;endroit, celle qui renferme le criminel.
-- Le voilà.
+- « Le voilà »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -871,7 +874,8 @@ Le lieutenant passe son badge et se met à parler dans sa barbe.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Vous avez dépassé la ligne jaune. Vous devriez pas, en général on le déconseille. 
+- « Vous avez dépassé la ligne jaune. Vous devriez pas, en général on le déconseille »
+
 Vous froncez les sourcils d&#39;incompréhension avant de poser les yeux sur les écritures au sol.
 
 &lt;b&gt;NE PAS DEPASSER&lt;/b&gt;
@@ -898,7 +902,7 @@ Vous froncez les sourcils d&#39;incompréhension avant de poser les yeux sur les
 [[Baisser les yeux|J1S2 - Première discussion Fixer Stop]]
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="J1S2 - Première discussion Fixer Stop" tags="" position="1200,4850" size="100,100">Le lieutenant s&#39;adresse à vous.
-- Vous avez eu ce que vous vouliez ? demande-t-il, sceptique.
+- « Vous avez eu ce que vous vouliez ? » demande-t-il, sceptique.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -924,7 +928,7 @@ Vous froncez les sourcils d&#39;incompréhension avant de poser les yeux sur les
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Le lieutenant vous interrompt brusquement, le son de sa voix vous fait sursauter et vous reprenez vos esprits.
-- Ça sera tout pour aujourd&#39;hui, déclare-t-il. Je pense que vous avez eu ce que vous vouliez.
+- « Ça sera tout pour aujourd&#39;hui » déclare-t-il. « Je pense que vous avez eu ce que vous vouliez »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -937,11 +941,11 @@ Le lieutenant vous interrompt brusquement, le son de sa voix vous fait sursauter
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Qu&#39;est ce que vous faites ? Vous exclamez vous
+- « Qu&#39;est ce que vous faites ? » Vous exclamez vous
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Mesure de prévention, répond froidement le lieutenant avant de chuchoter dans votre direction. Je vous ai dis de faire attention, il est complétement fou.
+- « Mesure de prévention » répond froidement le lieutenant avant de chuchoter dans votre direction. « Je vous ai dis de faire attention, il est complétement fou »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -951,29 +955,29 @@ Le lieutenant vous interrompt brusquement, le son de sa voix vous fait sursauter
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="J1S2 - Fin de la première visite (visite)" tags="" position="1200,5725" size="100,100">Vous traversez une nouvelle fois les couloirs du pénitencier, dans l&#39;autre sens cette fois. Saluez le lieutenant et sortez du bâtiment. Cette mission ne va pas être de tout repos. Vous l&#39;avez senti, le criminel va vous donner du fil à retordre. Il vous faudra être plus malin que lui et ne pas tomber dans ses pièges.</tw-passagedata><tw-passagedata pid="42" name="J1S2 - Première discussion Présentation" tags="" position="1725,4525" size="100,100">- Bonjour, je suis le psychi-
+&lt;&lt;/linkreplace&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="J1S2 - Fin de la première visite (visite)" tags="" position="1200,5725" size="100,100">Vous traversez une nouvelle fois les couloirs du pénitencier, dans l&#39;autre sens cette fois. Saluez le lieutenant et sortez du bâtiment. Cette mission ne va pas être de tout repos. Vous l&#39;avez senti, le criminel va vous donner du fil à retordre. Il vous faudra être plus malin que lui et ne pas tomber dans ses pièges.</tw-passagedata><tw-passagedata pid="42" name="J1S2 - Première discussion Présentation" tags="" position="1725,4525" size="100,100">- « Bonjour, je suis le psychi- »
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Vous n&#39;avez même pas eu le temps de terminer votre phrase que le criminel vous ignore purement pour s&#39;adresser au lieutenant.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Alors c&#39;est le nouveau psychiatre ? dit-il d&#39;un ton étrangement léger.
+- « Alors c&#39;est le nouveau psychiatre ? » dit-il d&#39;un ton étrangement léger.
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Le lieutenant vous adresse un coup d&#39;œil avant de reporter son regard sur le criminel et de répondre tout en hochant la tête.
-- Ouais, confirme-il simplement. 
+- « Ouais » confirme-il simplement. 
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Le criminel baisse les yeux vers la main blessé du lieutenant et étire un sourire amusé.
-- C&#39;est à cause de moi ça ? s&#39;amuse le prisonnier. Votre femme doit déjà être rentrée à cette heure, elle vous arrangera.
+- « C&#39;est à cause de moi ça ? s&#39;amuse le prisonnier. Votre femme doit déjà être rentrée à cette heure, elle vous arrangera »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Le lieutenant grogne et ignore la provocation en se retournant vers vous visiblement à bout de nerf. 
-- C&#39;est bon vous avez ce que vous voulez ?  Se renfrogne-il
+- « C&#39;est bon vous avez ce que vous voulez ? »  Se renfrogne-il.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -993,11 +997,11 @@ Le lieutenant grogne et ignore la provocation en se retournant vers vous visible
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="J1S2 - Première discussion Présentation Partir" tags="" position="1650,5225" size="100,100">Vous opinez du chef en direction du criminel puis vous tournez vers le lieutenant, prêt à partir.
 
 [[Partir|J1S2 - Fin de la première visite (B)]]</tw-passagedata><tw-passagedata pid="44" name="J1S2 - Première discussion Présentation (Suite 2)" tags="" position="1950,4950" size="100,100">Vous vous tournez vers le criminel et snobez le lieutenant avant de reprendre la parole.
-- Je disais donc, je suis le psychiatre qui m&#39;occuperais de faire votre profil psychologique.
+- « Je disais donc, je suis le psychiatre qui m&#39;occuperais de faire votre profil psychologique »
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Je le sais ça, déclare le criminel d&#39;une voix lasse. Nous aurons tout le temps de discuter ne vous en faites pas.
+- « Je le sais ça, déclare le criminel d&#39;une voix lasse. Nous aurons tout le temps de discuter ne vous en faites pas »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1006,11 +1010,11 @@ Le lieutenant grogne et ignore la provocation en se retournant vers vous visible
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="45" name="J1S1 - Entrer Bureau Question Affectation" tags="" position="1400,1100" size="100,100">- Je n&#39;aurais pas imaginé rencontrer un officier dans un tel lieu, déclarez-vous au lieutenant, qu&#39;est ce qui vous amène dans cette prison?
+</tw-passagedata><tw-passagedata pid="45" name="J1S1 - Entrer Bureau Question Affectation" tags="" position="1400,1100" size="100,100">- « Je n&#39;aurais pas imaginé rencontrer un officier dans un tel lieu » déclarez-vous au lieutenant « qu&#39;est ce qui vous amène dans cette prison ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Croyez moi, ça ne m&#39;enchante pas plus que vous, répond-il d&#39;un air resigné, entrez qu&#39;on en finisse au plus vite.
+- « Croyez moi, ça ne m&#39;enchante pas plus que vous » répond-il d&#39;un air resigné « entrez qu&#39;on en finisse au plus vite ».
 &lt;/span&gt;
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1022,16 +1026,16 @@ Text 1
 
 &lt;&lt;linkreplace  &quot;[...]&quot;&gt;&gt;Text2&lt;br&gt;&lt;&lt;linkreplace  &quot;[...]&quot;&gt;&gt;Text3&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
 </tw-passagedata><tw-passagedata pid="47" name="J1S1 - Question bureau sur le passé (pragmatique)" tags="" position="1175,2000" size="100,100">&lt;&lt;set $PointsRupture += 1&gt;&gt; \
-- Je fais mon travail lieutenant, celui pour lequel vous m&#39;avez appelé. Ces détails sont importants. 
+- « Je fais mon travail lieutenant, celui pour lequel vous m&#39;avez appelé. Ces détails sont importants. »
 
-[[ [...]|J1S1 - Question bureau forcer]]</tw-passagedata><tw-passagedata pid="48" name="J1S1 - Question sur la passé (diplomatique 2)" tags="" position="975,2075" size="100,100">- Lieutenant je comprends votre point de vue, argumentez-vous. Cette histoire traine depuis trop longtemps pour vous mais plus vous m&#39;aidez, plus tôt l&#39;affaire sera classée.
+[[ [...]|J1S1 - Question bureau forcer]]</tw-passagedata><tw-passagedata pid="48" name="J1S1 - Question sur la passé (diplomatique 2)" tags="" position="975,2075" size="100,100">- « Lieutenant je comprends votre point de vue » argumentez-vous. « Cette histoire traine depuis trop longtemps pour vous mais plus vous m&#39;aidez, plus tôt l&#39;affaire sera classée »
 
 [[ [...]|J1S1 - Question bureau forcer]]</tw-passagedata><tw-passagedata pid="49" name="J1S1 - Question bureau forcer (Suite 1A)" tags="" position="1175,2300" size="100,100">&lt;&lt;set $PointsRupture += 1&gt;&gt; \
 Vous serrez les dents pendant sa tirade.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Psychiatre pas psychologue tout d&#39;abord. Je ne suis pas un grand adorateur de votre profession non plus lieutenant, emmenez moi voir le criminel qu&#39;on accélère.
+- « Psychiatre pas psychologue tout d&#39;abord. Je ne suis pas un grand adorateur de votre profession non plus lieutenant, emmenez moi voir le criminel qu&#39;on accélère »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1043,7 +1047,7 @@ Vous serrez les dents pendant sa tirade.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
--Je comprend tout à fait lieutenant. Ne perdons pas plus de temps alors, j&#39;aimerais le voir.
+- « Je comprend tout à fait lieutenant. Ne perdons pas plus de temps alors, j&#39;aimerais le voir »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1051,13 +1055,13 @@ Vous serrez les dents pendant sa tirade.
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="J1S2 - Première visite (Suite 2A)" tags="" position="1175,3925" size="100,100">Pourquoi est ce qu&#39;on s&#39;arrête ?
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="J1S2 - Première visite (Suite 2A)" tags="" position="1175,3925" size="100,100">- « Pourquoi est ce qu&#39;on s&#39;arrête ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J1S2 - Première visite (Suite 3)]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="J1S2 - Première visite (Suite 2B)" tags="" position="1425,3925" size="100,100">Vous avez peur du noir lieutenant ?
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="J1S2 - Première visite (Suite 2B)" tags="" position="1425,3925" size="100,100">- « Vous avez peur du noir lieutenant ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1067,10 +1071,10 @@ Vous serrez les dents pendant sa tirade.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Pourquoi est-il dans la pénombre?
+- « Pourquoi est-il dans la pénombre ? »
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- Mesure de prévention, répond  le lieutenant. C&#39;est mieux ainsi.
+- Mesure de prévention » répond le lieutenant. « C&#39;est mieux ainsi »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
