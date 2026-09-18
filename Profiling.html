@@ -146,6 +146,10 @@ a:hover {
 }
 */
 
+#ui-bar-toggle {
+  display: none;
+}
+
 #ui-bar-body {
   text-align: center;
 }
@@ -253,7 +257,7 @@ ul {
 }
 
 .tab-selected {
-  color: red;
+  color: blue;
 }
 
 .PlayerInventoryTab p a {
@@ -261,13 +265,19 @@ ul {
 }
 
 .PlayerInventoryTab p a:hover {
-  color: blue;
+  color: gray;
   /*text-decoration: underline;*/
 }
 
 .PlayerInventoryTab p a.yes {
+  color: green;
   text-decoration: underline !important;
 }
+
+.PlayerInventoryTab p a.yes:hover {
+  color: #32CD32;
+}
+
 /*
 #PlayerInventoryTab1 p a.yes:hover {
   text-decoration: line-through;
@@ -275,8 +285,14 @@ ul {
 */
 
 .PlayerInventoryTab p a.no {
+  color: red;
   text-decoration: line-through !important;
 }
+
+.PlayerInventoryTab p a.no:hover {
+  color: #AA4A44;
+}
+
 /*
 #PlayerInventoryTab1 p a.no:hover {
   text-decoration: none;
@@ -292,29 +308,7 @@ head_body.insertAdjacentHTML("beforeend", ' \
 ');
 
 let left_body = document.getElementById("ui-bar-body");
-/*
-left_body.insertAdjacentHTML("beforeend", ' \
-<div id="PlayerInventory"> \
-    <ul id="PlayerInventoryList"> \
-    </ul> \
-</div> \
-');
-let PlayerInventoryList = document.getElementById("PlayerInventoryList");
 
-
-setup.UpdatePlayerInventoryList = function() {
-  let Content = '';
-  PlayerInventoryListArray.forEach((item, index) => {
-    Content += `<li>${item}</li>`;
-  });
-  PlayerInventoryList.innerHTML=Content;
-};
-
-setup.AddItemToPlayerInventoryList = function(ItemName) {
-  PlayerInventoryListArray.push(ItemName);
-  setup.UpdatePlayerInventoryList();
-};
-*/
 
 function ChangeDisplayedPlayerTab(TabId) {
   if (TabId == 1) {
@@ -357,86 +351,131 @@ function ClickedOnTypeTitle(element) {
   }
 }
 
+setup.DisplayDocumentUI = function() {
+  left_body.insertAdjacentHTML("beforeend", ' \
+  <div id="PlayerInventory" class="fade-in"> \
+      <div id="PlayerInventoryBox"> \
+        <div id="PlayerInventoryBoxTabs"> \
+           <button id="ChangeDisplayedPlayerTab1"><b>Type 1</b></button> \
+           <button id="ChangeDisplayedPlayerTab2"><b>Type 2</b></button> \
+           <button id="ChangeDisplayedPlayerTab3"><b>Type 3</b></button> \
+        </div> \
+        <div id="PlayerInventoryTab1" class="PlayerInventoryTab"> \
+  <p> - - - - - - - - - - - - </p> \
+           <p><b>Psychopathe</b></p> \
+           <p>Trouble de la personnalité : Condamnable à mort</p> \
+           <p> - - - - - - - - - - - - \
+  <br> \
+  - <a class="ClickableTitle">Mensonge pathologique</a> : \
+  <br> \
+  Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Emoussement affectif</a> : \
+  <br> \
+  Diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
+  <br> \
+  <br> \
+   - <a class="ClickableTitle">Manipulation et charme superficiel</a> : \
+  <br> \
+  Elle utilise un grand charisme pour séduire, tromper et obtenir ce qu\'elle veut. \
+  <br> \
+  <br> \
+  Origine :  \
+  <br> \
+  - <a class="ClickableTitle">Traumatismes et négligence</a> : \
+  Enfance difficile, maltraitances et instabilité parentale (surtout lié à la mère). \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Anatomie du cerveau</a> : \
+  <br> \
+  Différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale. \
+  <br> \
+  - - - - - - - - - - - - \
+           </p> \
+        </div> \
+        <div id="PlayerInventoryTab2" class="PlayerInventoryTab"> \
+  <p> - - - - - - - - - - - - </p> \
+           <p><b>Schizophrénie paranoïde</b></p> \
+           <p>Maladie mentale : non condamnable</p> \
+           <p> - - - - - - - - - - - - \
+  <br> \
+  - <a class="ClickableTitle">Délires de persécution</a> : \
+  <br> \
+  Sentiment d\'être espionné, menacé, suivi ou qu\'un complot est formé contre soi. \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Hallucinations auditives</a> : \
+  <br> \
+  Fait d\'entendre des voix qui insultent, commentent les actes ou donnent des ordres. \
+  <br> \
+  <br> \
+   - <a class="ClickableTitle">Emoussement affectif</a> : \
+  <br> \
+  Diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
+  <br> \
+  <br> \
+  Cause / Facteurs de risques :  \
+  <br> \
+  - <a class="ClickableTitle">Traumatismes et négligence</a> : \
+  Enfance difficile, maltraitances, et de instabilité parentale. \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Héréditaire</a> : \
+  <br> \
+  Antécédents familiaux de problèmes de santé mentale. \
+  <br> \
+  - - - - - - - - - - - - \
+           </p> \
+        </div> \
+        <div id="PlayerInventoryTab3" class="PlayerInventoryTab"> \
+  <p> - - - - - - - - - - - - </p> \
+           <p><b>Trouble explosif intermittent</b></p> \
+           <p> - - - - - - - - - - - - \
+  <br> \
+  - <a class="ClickableTitle">Crises démesurées</a> : \
+  <br> \
+  Hurlements, disputes violentes, bris d\'objets ou agressions physiques. \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Caractère impulsif</a> : \
+  <br> \
+  Les explosions ne sont pas préméditées et ne visent pas à obtenir un avantage ou un objet précis. \
+  <br> \
+  <br> \
+   - <a class="ClickableTitle">Culpabilité</a> : \
+  <br> \
+  Un sentiment de remords, de honte ou d\'épuisement suit généralement l\'épisode agressif. \
+  <br> \
+  <br> \
+  Cause / Facteurs de risques :  \
+  <br> \
+  - <a class="ClickableTitle">Trouble coexistant</a> : \
+  Dépression, Anxiété, Abus de substances. \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Héréditaire</a> : \
+  <br> \
+  Antécédents familiaux de problèmes de santé mentale. \
+  <br> \
+  - - - - - - - - - - - - \
+           </p> \
+        </div> \
+      </div> \
+  </div> \
+  ');
 
-left_body.insertAdjacentHTML("beforeend", ' \
-<div id="PlayerInventory"> \
-    <div id="PlayerInventoryBox"> \
-      <div id="PlayerInventoryBoxTabs"> \
-         <button id="ChangeDisplayedPlayerTab1"><b>Type 1</b></button> \
-         <button id="ChangeDisplayedPlayerTab2"><b>Type 2</b></button> \
-         <button id="ChangeDisplayedPlayerTab3"><b>Type 3</b></button> \
-      </div> \
-      <div id="PlayerInventoryTab1" class="PlayerInventoryTab"> \
-<p> - - - - - - - - - - - - </p> \
-         <p><b>Psychopathe</b></p> \
-         <p> - - - - - - - - - - - - \
-<br> \
-- <a class="ClickableTitle">Mensonge pathologique</a> : \
-<br> \
-Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
-<br> \
-<br> \
-- Emoussement affectif : \
-<br> \
-Diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
-<br> \
-<br> \
- - Manipulation et charme superficiel : \
-<br> \Elle utilise un grand charisme pour séduire, tromper et obtenir ce qu\'elle veut. \
-<br> \
-<br> \
-Origine :  \
-<br> \
-- Traumatismes et négligence : \
-Enfance difficile, maltraitances, des abus ou un manque d\'affection et de stabilité parentale. \
-<br> \
-<br> \
-- Anatomie du cerveau : \
-<br> \
-Différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale (lié à la gestion de la peur, l\'empathie et la réactivité sociale) \
-<br> \
-<br> \
-Maladie mentale : non condamnable \
-<br> \
-- - - - - - - - - - - - \
-         </p> \
-      </div> \
-      <div id="PlayerInventoryTab2" class="PlayerInventoryTab"> \
-         <p>Schizophrénie paranoïde</p> \
-         <p> \
-            - Délires de persécution : sentiment d\'être espionné, menacé, suivi ou qu\'un complot est formé contre soi. \
-            - Hallucinations auditives : fait d\'entendre des voix qui insultent, commentent les actes ou donnent des ordres. \
-            - Emoussement affectif : diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
-            - Retrait social : isolement et repli sur soi, la personne délaissant ses proches et ses activités. \
-<br> \
-            Origine : \
-            Traumatismes et négligence : enfance difficile, maltraitances, des abus ou un manque d\'affection et de stabilité parentale. \
-<br> \
-            Héréditaire \
-		 </p> \
-      </div> \
-      <div id="PlayerInventoryTab3" class="PlayerInventoryTab"> \
-         <p>Trouble explosif intermittent</p> \
-         <p> \
-            Crises démesurées : hurlements, disputes violentes, bris d\'objets ou agressions physiques. \
-Caractère impulsif : les explosions ne sont pas préméditées et ne visent pas à obtenir un avantage ou un objet précis.\
-Culpabilité : un sentiment de remords, de honte ou d\'épuisement suit généralement l\'épisode agressif.\
-         </p> \
-      </div> \
-    </div> \
-</div> \
-');
-let PlayerInventory = document.getElementById("PlayerInventory");
-document.getElementById("ChangeDisplayedPlayerTab1").addEventListener("click", function() { ChangeDisplayedPlayerTab(1) }, false);
-document.getElementById("ChangeDisplayedPlayerTab2").addEventListener("click", function() { ChangeDisplayedPlayerTab(2) }, false);
-document.getElementById("ChangeDisplayedPlayerTab3").addEventListener("click", function() { ChangeDisplayedPlayerTab(3) }, false);
-// Default
-ChangeDisplayedPlayerTab(1);
+  document.getElementById("ChangeDisplayedPlayerTab1").addEventListener("click", function() { ChangeDisplayedPlayerTab(1) }, false);
+  document.getElementById("ChangeDisplayedPlayerTab2").addEventListener("click", function() { ChangeDisplayedPlayerTab(2) }, false);
+  document.getElementById("ChangeDisplayedPlayerTab3").addEventListener("click", function() { ChangeDisplayedPlayerTab(3) }, false);
+  // Default
+  ChangeDisplayedPlayerTab(1);
 
-const ClickableTitles = document.getElementsByClassName("ClickableTitle");
-for (const element of ClickableTitles) {
-  element.addEventListener("click", function(event) { ClickedOnTypeTitle(event.target) }, false);
-}</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
+  const ClickableTitles = document.getElementsByClassName("ClickableTitle");
+  for (const element of ClickableTitles) {
+    element.addEventListener("click", function(event) { ClickedOnTypeTitle(event.target) }, false);
+  }
+};</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
 
 Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;&lt;&lt;script&gt;&gt;setup.AddItemToPlayerInventoryList(&quot;jambon&quot;);&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt; bi bla blou
 
@@ -457,7 +496,7 @@ Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;
 </tw-passagedata><tw-passagedata pid="4" name="Passage 4" tags="" position="325,325" size="100,100">zedlhjkzDBSHCFVBHJDWFBVDWBGV
 Variable is $VariableTest
 
-&lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start J1S1 - Salle d&#39;attente" tags="" position="1400,375" size="100,100">//Vous êtes assis entrain d&#39;attendre//
+&lt;&lt;button [[Restart|Passage 1]]&gt;&gt; aaaaaaaaaaaa &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Start J1S1 - Salle d&#39;attente" tags="" position="1400,375" size="100,100">Vous êtes assis à l&#39;accueil du pénitentiel le plus sécurisé de l&#39;Etat. De toute votre carrière de psychiatre, jamais une demande de rendez-vous ne vous a autant plongé dans le brouillard. Vous ne savez pas encore ce que vous faites là au delà du fait que c&#39;est assez important pour qu&#39;on vous demande de ne pas en parler. Vous devez rencontrer quelqu&#39;un ici dans peu de temps, il vous reste encore quelques minutes devant vous.
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -574,6 +613,7 @@ Le lieutenant hausse un sourcil.
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 - Ouais, répond l&#39;homme. Ça m&#39;enchante pas plus que ça qu&#39;il puisse passer à coté de sa peine mais c&#39;est la loi. Vous êtes le troisième psychiatre qu&#39;on appelle. Etablissez son profil psychologique qu&#39;on en parle plus. 
+&lt;&lt;script&gt;&gt;setup.DisplayDocumentUI()&lt;&lt;/script&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
