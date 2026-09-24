@@ -297,7 +297,9 @@ ul {
 #PlayerInventoryTab1 p a.no:hover {
   text-decoration: none;
 }
-*/</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
+*/
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var PlayerInventoryListArray = [];
 
 
 let head_body = document.head;
@@ -362,41 +364,7 @@ setup.DisplayDocumentUI = function() {
         </div> \
         <div id="PlayerInventoryTab1" class="PlayerInventoryTab"> \
   <p> - - - - - - - - - - - - </p> \
-           <p><b>Psychopathe</b></p> \
-           <p>Trouble de la personnalité : Condamnable à mort</p> \
-           <p> - - - - - - - - - - - - \
-  <br> \
-  - <a class="ClickableTitle">Mensonge pathologique</a> : \
-  <br> \
-  Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
-  <br> \
-  <br> \
-  - <a class="ClickableTitle">Emoussement affectif</a> : \
-  <br> \
-  Diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
-  <br> \
-  <br> \
-   - <a class="ClickableTitle">Manipulation et charme superficiel</a> : \
-  <br> \
-  Elle utilise un grand charisme pour séduire, tromper et obtenir ce qu\'elle veut. \
-  <br> \
-  <br> \
-  Origine :  \
-  <br> \
-  - <a class="ClickableTitle">Traumatismes et négligence</a> : \
-  Enfance difficile, maltraitances et instabilité parentale (surtout lié à la mère). \
-  <br> \
-  <br> \
-  - <a class="ClickableTitle">Anatomie du cerveau</a> : \
-  <br> \
-  Différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale. \
-  <br> \
-  - - - - - - - - - - - - \
-           </p> \
-        </div> \
-        <div id="PlayerInventoryTab2" class="PlayerInventoryTab"> \
-  <p> - - - - - - - - - - - - </p> \
-           <p><b>Schizophrénie paranoïde</b></p> \
+           <p><b><a class="ClickableTitle">Schizophrénie paranoïde</a></b></p> \
            <p>Maladie mentale : non condamnable</p> \
            <p> - - - - - - - - - - - - \
   <br> \
@@ -428,9 +396,10 @@ setup.DisplayDocumentUI = function() {
   - - - - - - - - - - - - \
            </p> \
         </div> \
-        <div id="PlayerInventoryTab3" class="PlayerInventoryTab"> \
+        <div id="PlayerInventoryTab2" class="PlayerInventoryTab"> \
   <p> - - - - - - - - - - - - </p> \
-           <p><b>Trouble explosif intermittent</b></p> \
+           <p><b><a class="ClickableTitle">Trouble explosif intermittent</a></b></p> \
+           <p>Maladie mentale : non condamnable</p> \
            <p> - - - - - - - - - - - - \
   <br> \
   - <a class="ClickableTitle">Crises démesurées</a> : \
@@ -461,6 +430,40 @@ setup.DisplayDocumentUI = function() {
   - - - - - - - - - - - - \
            </p> \
         </div> \
+        <div id="PlayerInventoryTab3" class="PlayerInventoryTab"> \
+  <p> - - - - - - - - - - - - </p> \
+           <p><b><a id="PsychoChoice" class="ClickableTitle">Psychopathe</a></b></p> \
+           <p>Trouble de la personnalité : Condamnable à mort</p> \
+           <p> - - - - - - - - - - - - \
+  <br> \
+  - <a class="ClickableTitle">Mensonge pathologique</a> : \
+  <br> \
+  Elle ment facilement et sans ressentir de stress ou d\'émotion particulière. \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Emoussement affectif</a> : \
+  <br> \
+  Diminution de l\'expression des émotions, froideur ou apparente insensibilité. \
+  <br> \
+  <br> \
+   - <a class="ClickableTitle">Manipulation et charme superficiel</a> : \
+  <br> \
+  Elle utilise un grand charisme pour séduire, tromper et obtenir ce qu\'elle veut. \
+  <br> \
+  <br> \
+  Origine :  \
+  <br> \
+  - <a class="ClickableTitle">Traumatismes et négligence</a> : \
+  Enfance difficile, maltraitances et instabilité parentale (surtout lié à la mère). \
+  <br> \
+  <br> \
+  - <a class="ClickableTitle">Anatomie du cerveau</a> : \
+  <br> \
+  Différences structurales et fonctionnelles sont observées, notamment dans l\'amygdale. \
+  <br> \
+  - - - - - - - - - - - - \
+           </p> \
+        </div> \
       </div> \
   </div> \
   ');
@@ -475,6 +478,13 @@ setup.DisplayDocumentUI = function() {
   for (const element of ClickableTitles) {
     element.addEventListener("click", function(event) { ClickedOnTypeTitle(event.target) }, false);
   }
+};
+
+setup.GetPyschoResult = function () {
+  
+  var res = document.getElementById("PsychoChoice").classList.contains("yes");
+  
+  return res;
 };</script><tw-tag name="TestTag1" color="orange"></tw-tag><tw-passagedata pid="1" name="__Test__ Passage 1" tags="TestTag1" position="275,25" size="100,100">test body 1
 
 Blala bla bla &lt;span class=NoteLink&gt;&lt;&lt;link &quot;jambon&quot;&gt;&gt;&lt;&lt;script&gt;&gt;setup.AddItemToPlayerInventoryList(&quot;jambon&quot;);&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/span&gt; bi bla blou
@@ -501,7 +511,9 @@ Variable is $VariableTest
 &lt;&lt;set $PsyDommages to 0&gt;&gt; \
 &lt;&lt;set $CriminelConfiance to 0&gt;&gt;\
 &lt;&lt;set $J3S2_Heure to 0&gt;&gt;\
-Vous êtes assis à l&#39;accueil du pénitencier le plus sécurisé de l&#39;Etat.
+[img[content/WaitingRoom.jpg]]
+
+Vous êtes assis à l&#39;accueil du pénitentiel le plus sécurisé de l&#39;Etat.
 De toute votre carrière de psychiatre, jamais une demande de rendez-vous ne vous a autant plongé dans le brouillard.
 
 Vous ne savez pas encore ce que vous faites là au delà du fait que c&#39;est assez important pour qu&#39;on vous demande de ne pas en parler. Vous devez rencontrer quelqu&#39;un ici dans peu de temps, il vous reste encore quelques minutes devant vous.
@@ -514,7 +526,7 @@ Vous ne savez pas encore ce que vous faites là au delà du fait que c&#39;est a
 [[Interroger quelqu&#39;un à l&#39;accueil|J1S1 - Salle d&#39;attente (Question)]]
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
-</tw-passagedata><tw-passagedata pid="6" name="J1S1 - Salle d&#39;attente (Café)" tags="" position="1125,600" size="100,100">En observant autour de vous, vous apercevez une cafetière destinée aux gens qui comme vous, attendent. Vous vous levez, en vous approchant vous remarquez que l&#39;objet a été malmené, le plastique est fracturé à plusieurs endroits et semble avoir subi un gros choc. Malgré son état, vous vous servez votre café.
+</tw-passagedata><tw-passagedata pid="6" name="J1S1 - Salle d&#39;attente (Café)" tags="" position="1125,600" size="100,100">En observant autour de vous, vous apercevez une cafetière destiné aux gens qui comme vous, attendent. Vous vous levez, en vous approchant vous remarquez que l&#39;objet a été malmené, le plastique est fracturé à plusieurs endroits et semble avoir subit un gros choc. Malgré son état, vous vous servez votre café.
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
 &lt;&lt;timed 1s&gt;&gt; \
@@ -526,7 +538,7 @@ Vous ne savez pas encore ce que vous faites là au delà du fait que c&#39;est a
 	[[Retourner s&#39;assoir|J1S1 - Salle d&#39;attente (Suite)]]
 &lt;&lt;/if&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="J1S1 - Salle d&#39;attente (Fenetre)" tags="" position="1375,600" size="100,100">Vous jetez un regard distrait vers la fenêtre derrière vous. Elle donne sur une cour bétonnée encerclée de grands murs auxquels s&#39;ajoutent des barbelés. La cour est vide, les prisonniers doivent encore être en cellule. 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="J1S1 - Salle d&#39;attente (Fenetre)" tags="" position="1375,600" size="100,100">Vous jetez un regard distrait vers la fenêtre derrière vous. Elle donne sur une cour bétonnée encerclée de grands murs auquel s&#39;ajoutent des barbelés. La cour est vide, les prisonniers doivent encore être en cellule. 
 
 &lt;&lt;set $J1S1_AttenteQuestions  += 1&gt;&gt; \
 &lt;&lt;timed 1s&gt;&gt; \
@@ -547,7 +559,7 @@ Vous ne savez pas encore ce que vous faites là au delà du fait que c&#39;est a
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- « Je suis désolé, ce n&#39;est pas à moi de faire ça » vous répond l&#39;hôte d&#39;une voix mal assurée, tout ce que je peux vous dire c&#39;est qu&#39;il ne va pas tarder.
+- « Je suis désolé, ce n&#39;est pas à moi de faire ça » vous répond l&#39;hôte d&#39;une voix mal assuré, tout ce que je peux vous dire c&#39;est qu&#39;il ne va pas tarder.
 Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attendre.
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
@@ -562,12 +574,12 @@ Stresser, elle nous explique qu&#39;elle peut rien dire et nous dit d&#39;attend
 &lt;&lt;/timed&gt;&gt; \
 &lt;&lt;/timed&gt;&gt; \
 &lt;&lt;/linkreplace&gt;&gt; \
-</tw-passagedata><tw-passagedata pid="9" name="J1S1 - Salle d&#39;attente (Suite)" tags="" position="1400,850" size="100,100">Finalement, la porte d&#39;un bureau s&#39;ouvre et dans son encadrement se tient un homme d&#39;une quarantaine d&#39;années. 
+</tw-passagedata><tw-passagedata pid="9" name="J1S1 - Salle d&#39;attente (Suite)" tags="" position="1400,850" size="100,100">Finalement, la porte d&#39;un bureau s&#39;ouvre et dans son encadrement se tient un homme d&#39;une quarantaine d&#39;année. 
 Il est en uniforme de police, son badge fièrement accroché à sa poitrine. Il semble extenué, ses cernes s&#39;étirent sous ses yeux et il semble particulièrement de mauvaise humeur.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- « Suivez-moi » vous ordonne-t-il d&#39;un ton sec. Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main droite des entailles encore ouvertes. Vous vous levez et commencez à le suivre.
+- « Suivez moi » vous ordonne-t-il d&#39;un ton sec. Il vous fait signe de vous lever et vous apercevez sur les phalanges de sa main droite des entailles encore ouvertes. Vous vous levez et commencez à le suivre.
 &lt;/span&gt; \
 
 &lt;&lt;timed 2s&gt;&gt; \
@@ -593,18 +605,20 @@ Il est en uniforme de police, son badge fièrement accroché à sa poitrine. Il 
 &lt;&lt;/linkreplace&gt;&gt;
 </tw-passagedata><tw-passagedata pid="11" name="J1S1 - Entrer Bureau Se taire" tags="" position="1625,1100" size="100,100">Vous restez silencieux, le lieutenant n&#39;a pas l&#39;air de vouloir faire la discussion. Il vous invite à rentrer dans le bureau.
 
-[[Rentrer dans le bureau|J1S1 - First time bureau]] </tw-passagedata><tw-passagedata pid="12" name="J1S1 - First time bureau" tags="" position="1350,1400" size="100,100">Vous pénétrez dans le bureau, c&#39;est un bureau de fonctionnaire classique dénué de toute affaire personnelle, pas même une photo ou une plante.
+[[Rentrer dans le bureau|J1S1 - First time bureau]] </tw-passagedata><tw-passagedata pid="12" name="J1S1 - First time bureau" tags="" position="1350,1400" size="100,100">[img[content/Bureau.png]]
+
+Vous pénétrez dans le bureau, c&#39;est un bureau de fonctionnaire classique dénué de toute affaire personnelle, pas même une photo ou une plante.
 Le lieutenant s&#39;installe en face de vous.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- « Vous avez dû suivre l&#39;histoire du boucher...  »
-L&#39;homme laisse la phrase en suspens, il attend une réponse qui ne vient pas, vous le laissez finir. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;
+- « Vous avez du suivre l&#39;histoire du boucher...  »
+L&#39;homme laisse la phrase en suspend, il attend une réponse qui ne vient pas, vous le laissez finir. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;
 &lt;span class=&#39;fade-in&#39;&gt;
 - « 12 meurtres, tous tués de la même manière, continue le lieutenant. Un tueur en série en somme, son jugement s&#39;est terminé il y a peu, il est coupable et sera condamné à mort. Sauf si....  »
-Là encore il laisse sa phrase en suspens. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;&lt;br&gt;
+Là encore il laisse sa phrase en suspend. &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt;&lt;br&gt;
 &lt;span class=&#39;fade-in&#39;&gt; \
-- «Sauf s&#39;il présente une pathologie qui conduirait à une abolition du discernement et qu&#39;une irresponsabilité pénale soit déclarée »
+- «Sauf s&#39;il présente une pathologie qui conduirait à une abolition du discernement et qu&#39;une irresponsabilité pénale soit déclaré »
 Cette fois vous terminez, c&#39;est votre sujet, vous êtes spécialiste en la matière.
 
 &lt;&lt;timed 1s&gt;&gt; \
@@ -619,8 +633,8 @@ Le lieutenant hausse un sourcil.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- « Ouais » répond l&#39;homme. « Ça m&#39;enchante pas plus que ça qu&#39;il puisse passer à coté de sa peine mais c&#39;est la loi. Vous êtes le troisième psychiatre qu&#39;on appelle. Établissez son profil psychologique qu&#39;on en parle plus, rendez moi le dossier dès que possible. »
-&lt;&lt;script&gt;&gt;setup.DisplayDocumentUI()&lt;&lt;/script&gt;&gt;
+- « Ouais » répond l&#39;homme. « Ça m&#39;enchante pas plus que ça qu&#39;il puisse passer à coté de sa peine mais c&#39;est la loi. Vous êtes le troisième psychiatre qu&#39;on appelle. Etablissez son profil psychologique qu&#39;on en parle plus »
+&lt;&lt;script&gt;&gt;setup.DisplayDocumentUI()&lt;&lt;/script&gt;&gt; \
 &lt;/span&gt;
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -639,11 +653,11 @@ Le lieutenant hausse un sourcil.
 &lt;&lt;/linkreplace&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;/linkreplace&gt;&gt;
-</tw-passagedata><tw-passagedata pid="13" name="J1S1 - Bureau Questions" tags="" position="1350,1600" size="100,100">La raison de votre venue est plus claire et votre mission est établie. Vous allez avoir besoin de plus de détails.
+</tw-passagedata><tw-passagedata pid="13" name="J1S1 - Bureau Questions" tags="" position="1350,1600" size="100,100">La raison de votre venue est plus clair et votre mission est établi. Vous allez avoir besoin de plus de détails.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- «Est ce qu&#39;on sait quoi que ça soit sur son motif ? »
+- « Est ce qu&#39;on sait quoi que ça soit sur son motif ? »
 Questionnez vous tout en sortant un carnet pour prendre des notes.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
@@ -659,7 +673,7 @@ Questionnez vous tout en sortant un carnet pour prendre des notes.
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/linkreplace&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="J1S1 - Question bureau 3e profiling" tags="" position="1650,1800" size="100,100">- « Vous avez mentionné que j&#39;étais le troisième psychiatre » faites-vous remarquer au lieutenant. « Qu&#39;en est-il des deux autres ? Leurs dossiers n&#39;étaient-ils pas suffisants ? »
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="J1S1 - Question bureau 3e profiling" tags="" position="1650,1800" size="100,100">- « Vous avez mentionné que j&#39;étais le troisième psychiatre » faites-vous remarquer au lieutenant. « Qu&#39;en est-il des deux autres ? Leurs dossiers n&#39;étaient-ils pas suffisant ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -674,7 +688,7 @@ Le lieutenant semble hésiter quelques secondes avant de répondre.
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="J1S1 - Question bureau sur le passé" tags="" position="1075,1825" size="100,100">- « Est ce que vous auriez quelques informations qui pourraient m&#39;être utile sur son passé ? Son enfance, ses parents ? Une conjointe peut être ? »
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="J1S1 - Question bureau sur le passé" tags="" position="1075,1825" size="100,100">- « Est ce que vous auriez quelques informations qui pourrait m&#39;être utile sur son passé ? Son enfance, ses parents ? Une conjointe peut être ? »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -698,7 +712,7 @@ Vous tapotez sur votre carnet avec votre crayon prêt à noter la moindre inform
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="J1S1 - Question bureau profil psy" tags="" position="1325,1925" size="100,100">- « Est ce qu&#39;il a un quelconque antécédent psychiatrique ? Des séjours à l&#39;asile ? »
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="J1S1 - Question bureau profil psy" tags="" position="1325,1925" size="100,100">- « Est ce qu&#39;il a quelconque antécédent psychiatrique ? Des séjours à l&#39;asile ? »
 Le lieutenant lève les yeux au ciel. 
 
 &lt;&lt;timed 1s&gt;&gt; \
@@ -757,11 +771,11 @@ L&#39;homme serre les jointures de ses mains et ses phalanges deviennent blanche
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-Le lieutenant souffle mais semble concilliant.
+Le lieutenant souffle mais semble conscilliant.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- « Enfance difficile. Il a été en centre de détention pour mineurs. Aucune conjointe de connue. Je peux vous emmener le voir si vous voulez en savoir plus »
+- « Des mauvaises relations avec sa mère, elle le battait quand il était gosse je crois. Aucune conjointe de connue. Je peux vous emmener le voir si vous voulez en savoir plus »
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -796,7 +810,9 @@ Le lieutenant souffle mais semble concilliant.
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="J1S2 - Première visite (Start)" tags="" position="1275,2875" size="100,100">Le lieutenant accompagne le psychiatre à travers le dédale de la prison. Les murs autour d’eux sont fissurés, striés de traces d&#39;humidité qui dessinent des continents. Une odeur de moisi et de poussière enveloppe le lieu. L&#39;endroit est bruyant, des voix venant de partout à la fois et même des cris au loin.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="J1S2 - Première visite (Start)" tags="" position="1275,2875" size="100,100">[img[content/CellsCorridor.jpg]]
+
+Le lieutenant accompagne le psychiatre à travers le dédale de la prison. Les murs autour d’eux sont fissurés, striés de traces d&#39;humidité qui dessinent des continents. Une odeur de moisi et de poussière enveloppe le lieu. L&#39;endroit est bruyant, des voix venant de partout à la fois et même des cris au loin.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -827,14 +843,14 @@ Le lieutenant souffle mais semble concilliant.
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="J1S2 - Première visite (Suite)" tags="" position="1275,3300" size="100,100">Vous arrivez devant des portes qui semblent plus sécurisées avec quelques cartes d’accès à utiliser. L’isolement, c&#39;est là où les prisonniers particulièrement surveillés ou nécessitant une protection sont placés.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="J1S2 - Première visite (Suite)" tags="" position="1275,3300" size="100,100">Vous arrivez devant des portes qui semblent plus sécurisées avec quelques cartes d’accès à utiliser. L’isolement, là où les prisonniers particulièrement surveillés ou nécessitant une protection sont placés.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 Le lieutenant passe son badge et se met à parler dans sa barbe.
-- « Ces taulards... Y en aurait de la place en prison si c&#39;est moi qui étais en charge... »
+- « Ces taulards... Y en aurait de la place en prison si c&#39;est moi qui était en charge... »
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 
@@ -855,26 +871,28 @@ Le lieutenant passe son badge et se met à parler dans sa barbe.
 [[Demander pourquoi vous vous arrêtez|J1S2 - Première visite (Suite 2A)]]
 [[Provoquer le lieutenant|J1S2 - Première visite (Suite 2B)]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="J1S2 - Description Prisonnier 1" tags="" position="625,3550" size="100,100">Descprtion prisonier 1 et sa cellule (il chante)
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="J1S2 - Description Prisonnier 1" tags="" position="625,3550" size="100,100">Le prisonnier chante, il vous regarde passer mais ne s&#39;interrompt pas.
 
 [[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
-[[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]</tw-passagedata><tw-passagedata pid="30" name="J1S2 - Description Prisonnier 2" tags="" position="850,3550" size="100,100">Descprtion prisonier 2 et sa cellule (écrit sur les murs)
-
-[[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
-[[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]
-
-</tw-passagedata><tw-passagedata pid="31" name="J1S2 - Description Prisonnier 3" tags="" position="1050,3550" size="100,100">Descprtion prisonier 3 et sa cellule (fixe le psychiatre)
+[[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]</tw-passagedata><tw-passagedata pid="30" name="J1S2 - Description Prisonnier 2" tags="" position="850,3550" size="100,100">La cellule est particulièrement désordonné, le prisonnier écrit sur le mur des mots que seul lui peut comprendre.
 
 [[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
 [[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]
-</tw-passagedata><tw-passagedata pid="32" name="J1S2 - Première visite (Suite 3)" tags="" position="1300,4125" size="100,100">Le lieutenant ignore purement et simplement votre question, il lève le bras et pointe du doigt quelque chose. La seule cellule de l&#39;endroit, celle qui renferme le criminel.
+
+</tw-passagedata><tw-passagedata pid="31" name="J1S2 - Description Prisonnier 3" tags="" position="1050,3550" size="100,100">Le détenu vous fixe, debout dans sa cellule. Il ne bouge pas d&#39;un pouce et vous observe passer les yeux grand ouverts.
+
+[[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
+[[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]
+</tw-passagedata><tw-passagedata pid="32" name="J1S2 - Première visite (Suite 3)" tags="" position="1300,4125" size="100,100">Le lieutenant ignore purement et simplement notre question, il lève le bras et pointe du doigt quelque chose. La seule cellule de l&#39;endroit, celle qui renferme le criminel.
 - « Le voilà »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[S&#39;avancer|J1S2 - Première visite (Suite 4)]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="J1S2 - Première visite (Suite 4)" tags="" position="1325,4350" size="100,100">Vous vous avancez, plissez les yeux pour mieux observer à travers les barreaux. Le criminel est assis sur une chaise au milieu de sa cellule. Son visage est dans la pénombre hormis ses yeux. 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="J1S2 - Première visite (Suite 4)" tags="" position="1325,4350" size="100,100">[img[content/CrimeCell.png]]
+
+Vous vous avancez, plissez les yeux pour mieux observer à travers les barreaux. Le criminel est assit sur une chaise au milieu de sa cellule. Son visage est dans la pénombre hormis ses yeux. 
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -913,14 +931,14 @@ Vous froncez les sourcils d&#39;incompréhension avant de poser les yeux sur les
 [[Ignorer le lieutenant et finir de se présenter|J1S2 - Première discussion Présentation (Suite 2)][$PointsRupture += 1]]
 [[Acquiescer|J1S2 - Première discussion Présentation Partir][$PointsRupture -= 1]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="J1S2 - Première discussion Fixer (Suite 2)" tags="" position="875,4950" size="100,100">Le criminel sort de la pénombre, il s&#39;avance de quelques pas et vous apercevez enfin les détails de son visage dans le peu de lumière qui sort du plafond. Il a l&#39;air attaché à son apparence, il a un visage soigné et semble  prendre soin de lui, même dans un tel contexte.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="J1S2 - Première discussion Fixer (Suite 2)" tags="" position="875,4950" size="100,100">Le criminel sort de la pénombre, il s&#39;avance de quelque pas et vous apercevez enfin les détails de son visage dans le peu de lumière qui sort du plafond. Il a l&#39;air attaché à son apparence, il un visage soigné et semble  prendre soin de lui, même dans un tel contexte.
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[Baisser les yeux|J1S2 - Première discussion Fixer Stop]]
 [[Ne pas lâcher le regard|J1S2 - Première discussion Fixer (Suite 3)]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="J1S2 - Première discussion Fixer (Suite 3)" tags="" position="875,5150" size="100,100">Vous continuer de fixer le criminel, lui, s&#39;avance proche des barreaux et vous observe d&#39;autant plus. Son regard et son visage sont complétement inexpressifs, son expression vous fait froid dans le dos. 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="J1S2 - Première discussion Fixer (Suite 3)" tags="" position="875,5150" size="100,100">Vous continuer de fixer le criminel, lui, s&#39;avance proche des barreaux et vous observe d&#39;autant plus. Son regard et son visage sont complétement inexpressif, son expression vous fait froid dans le dos. 
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -941,7 +959,7 @@ Le lieutenant vous interrompt brusquement, le son de sa voix vous fait sursauter
 &lt;/span&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="J1S2 - Fin de la première visite (A)" tags="" position="1100,5525" size="100,100">Vous froncez les sourcils et vous tournez vers le lieutenant.
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="J1S2 - Fin de la première visite (A)" tags="" position="1100,5525" size="100,100">Vous froncez les sourcils et vous tournez le lieutenant.
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -963,7 +981,7 @@ Le lieutenant vous interrompt brusquement, le son de sa voix vous fait sursauter
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-[[ [Jour 2|J2S1 - Start]] 
+[[ Jour 2|J2S1 - Start]] 
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="42" name="J1S2 - Première discussion Présentation" tags="" position="1725,4525" size="100,100">- « Bonjour, je suis le psychi- »
 &lt;&lt;timed 1s&gt;&gt; \
@@ -981,12 +999,12 @@ Le lieutenant vous adresse un coup d&#39;œil avant de reporter son regard sur l
 
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-Le criminel baisse les yeux vers la main blessée du lieutenant et étire un sourire amusé.
+Le criminel baisse les yeux vers la main blessé du lieutenant et étire un sourire amusé.
 - « C&#39;est à cause de moi ça ? s&#39;amuse le prisonnier. Votre femme doit déjà être rentrée à cette heure, elle vous arrangera »
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-Le lieutenant grogne et ignore la provocation en se retournant vers vous visiblement à bout de nerfs. 
+Le lieutenant grogne et ignore la provocation en se retournant vers vous visiblement à bout de nerf. 
 - « C&#39;est bon vous avez ce que vous voulez ? »  Se renfrogne-il.
 
 &lt;&lt;timed 1s&gt;&gt; \
@@ -1007,7 +1025,7 @@ Le lieutenant grogne et ignore la provocation en se retournant vers vous visible
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="J1S2 - Première discussion Présentation Partir" tags="" position="1650,5225" size="100,100">Vous opinez du chef en direction du criminel puis vous tournez vers le lieutenant, prêt à partir.
 
 [[Partir|J1S2 - Fin de la première visite (B)]]</tw-passagedata><tw-passagedata pid="44" name="J1S2 - Première discussion Présentation (Suite 2)" tags="" position="1950,4950" size="100,100">Vous vous tournez vers le criminel et snobez le lieutenant avant de reprendre la parole.
-- « Je disais donc, je suis le psychiatre qui m&#39;occuperai de faire votre profil psychologique »
+- « Je disais donc, je suis le psychiatre qui m&#39;occuperais de faire votre profil psychologique »
 
 &lt;&lt;timed 2s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1101,7 +1119,7 @@ Vous voilà de retour au pénitencier. Cette fois vous vous dirigez directement
 &lt;span class=&#39;fade-in&#39;&gt; \
 &lt;&lt;linkreplace &quot;[...]&quot;&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-- « Je ne vous accompagnerai pas cette fois » déclare-t-il. « Par contre vous devez signer ceci »
+- « Je ne vous accompagnerais pas cette fois » déclare-t-il. « Par contre vous devez signer ceci »
 Il vous tend nonchalamment une feuille et un stylo.
 
 - « Pas mille ans, dépêchez vous » ajoute-il.
@@ -1147,7 +1165,7 @@ Vous haussez un sourcil en direction du Lieutenant.
 
 Il grogne et marmonne des mots dans sa barbe tandis que vous lisez la décharge.
 
-&quot;En signant ce papier vous vous engagez à ne pas poursuivre l&#39;administration pénitentiaire en cas de décès&quot; sont les mots que vous découvrez sur la page.
+&quot;En signant ce papier vous vous s&#39;engagez à ne pas poursuivre l&#39;administration pénitentiaire en cas de décès&quot; sont les mots que vous découvrez sur la page.
 
 Vous inspirez puis signez en bas de la page.
 
@@ -1213,7 +1231,7 @@ Vous retournez vous assoir. Le criminel hoche la tête en signe de remerciement.
 
 Le criminel étire un léger sourire à votre intention.
 
-- J&#39;étais le plus grand lanceur de tout l&#39;état, raconte-t-il. J&#39;aurais fait une belle carrière si on ne m&#39;avait pas attrapé une première fois quand j&#39;étais môme.
+- J&#39;étais le plus grand lanceur de tout l&#39;état, raconte-t-il. J&#39;aurais fais une belle carrière si on ne m&#39;avait pas attrapé une première fois quand j&#39;étais môme.
 
 
 &lt;&lt;timed 1s&gt;&gt; \
@@ -1224,7 +1242,8 @@ Le criminel étire un léger sourire à votre intention.
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="65" name="J2S1 - Cellule Hub Question Nuits" tags="" position="1150,7275" size="100,100">&lt;&lt;set $J2S1_QuestionsHub1 += 1&gt;&gt; \
 Comment se passent vos nuits ici ?
 
-Mal. J&#39;ai l&#39;impression qu&#39;on m&#39;observe quand je dors.
+Kyle :
+-&gt; Délires de persécution (SIMULÉ)
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1235,13 +1254,13 @@ Mal. J&#39;ai l&#39;impression qu&#39;on m&#39;observe quand je dors.
 &lt;&lt;/if&gt;&gt; \
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="66" name="J2S1 - Cellule Hub Question Café" tags="" position="1375,7275" size="100,100">&lt;&lt;set $J2S1_QuestionsHub1 += 1&gt;&gt; \
-Vous avez remarqué que les yeux du criminel s&#39;attardaient sur la tasse de café brulant posée à coté de vous
+Vous avez remarqué que les yeux du criminel s&#39;attardaient sur la tasse de café brulant posé à coté de vous
 
 - Vous pouvez boire du café ici ?
 
 Il est surpris.
 
-- Oh. Tu es le premier à me parler de café, je t&#39;aime déjà toi, se réjouit il. Je devrais y avoir le droit mais je ne pense pas que les gardiens soient disposés à m&#39;offrir quoi que ce soit.
+- Oh. Tu es le premier à me parler de café, je t&#39;aime déjà toi, se réjouit il. Je devrais y avoir le droit mais je ne pense pas que les gardiens soient disposé à m&#39;offrir quoi que ça soit.
  
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1252,7 +1271,7 @@ Il est surpris.
 &lt;&lt;/if&gt;&gt; \
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="67" name="J2S1 - Cellule Hub Question Gardiens" tags="" position="1725,7275" size="100,100">&lt;&lt;set $J2S1_QuestionsHub1 += 1&gt;&gt; \
-- Comment ça se passe avec les gardiens ?
+- Comment ça ce passe avec les gardiens ?
 
 Le criminel croise les bras en vous observant.
 
@@ -1299,7 +1318,7 @@ Le criminel ricane doucement.
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="71" name="J2S1 - Cellule Hub Question Baseball A" tags="" position="650,7500" size="100,100">- Quelle est votre plus beau souvenir lié au baseball ? Votre première victoire peut être ?
 
-Le criminel semble réfléchir quelques instants.
+Le criminel semble réfléchir quelques instant.
 
 - Quand je suis allé voir un match de pros pour la première fois avec mon vieux, avoue-t-il. Les rares moments où il était assez sobre pour se rappeler qu&#39;il avait un fils.
 
@@ -1376,10 +1395,10 @@ Le criminel vous écoute attentivement, il opine du chef d&#39;un air satisfait.
 
 Le criminel lève les yeux au ciel mais lâche l&#39;affaire. Il souffle d&#39;agacement avant de répondre
 
-- Plusieurs fois. La dernière était mon premier meurtre, annonce-t-il calmement d&#39;un visage inexpressif. Elle puis son amant, après je les ai découpés tous les deux comme des pièces de viandes et les ai exposés au monde.
+- Plusieurs fois. La dernière était mon premier meurtre, annonce-t-il calmement d&#39;un visage inexpressif. Elle puis son amant, après je les ai découpé tout les deux comme des pièces de viandes et les ai exposé au monde.
 
-Il raconte ses crimes d&#39;un calme olympien comme s&#39;il racontait sa journée, l&#39;anxiété vous prend au tripes. Vous sentez l&#39;angoisse monter, comme si vous ne réalisiez que maintenant
-qui est-ce que vous aviez devant vous.
+Il raconte ses crimes d&#39;un calme olympien comme s&#39;il racontait sa journée, l&#39;anxiété vous prend au tripe. Vous sentez l&#39;angoisse monter, comme si vous ne réalisiez que maintenant
+qui-est ce que vous aviez devant vous.
 
 Le criminel passe sa main sur son visage avant de reprendre.
 
@@ -1400,7 +1419,7 @@ Le criminel vous écoute attentivement, il opine du chef d&#39;un air satisfait.
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J2S1 - Cellule Hub 2B]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="80" name="J2S1 - Cellule Hub 2 (Fin)" tags="" position="1200,9400" size="100,100">Vous vous apprêtez à vous lever quand le criminel reprend la parole.
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="80" name="J2S1 - Cellule Hub 2 (Fin)" tags="" position="1200,9400" size="100,100">Vous vous apprêtez à vous levez quand le criminel reprend la parole.
 
 - Qu&#39;est ce qu&#39;on vous a raconté sur les deux psychiatres avant vous ? 
 
@@ -1494,7 +1513,7 @@ Vous passez une tête à travers la porte du bureau du lieutenant pour lui deman
 
 Devant votre incompréhension, il étoffe.
 
-- On l&#39;a pas vraiment trouvé en fait, il s&#39;est rendu, explique-il. On a cru que c&#39;était une blague tellement il avait l&#39;air détaché de ses horreurs. Il avait l&#39;air d&#39;un gars sympa, drôle, qui sait se faire apprécier. Comment on aurait pu savoir...
+- On l&#39;a pas vraiment trouvé en fait, il s&#39;est rendu, explique-il. On a cru que c&#39;était une blague tellement il avait l&#39;air détaché de ses horreurs. Il avait l&#39;air d&#39;un gars sympa, drôle, qui sait se faire apprécié. Comment on aurait pu savoir...
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1685,8 +1704,8 @@ Mais l&#39;officier a déjà tourné les talons et s&#39;enferme dans son bureau
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-[[Se contenir|J3S2 - Entretien Hub 1]]
-[[Colère : &quot;Arrêter ce cinéma !!!&quot;|J3S2 - Entretien (Suite 2B2)]]
+[[Se contenir|J3S2 - Entretien (Suite 2B4)]]
+[[Etre honnête|J3S2 - Entretien (Suite 2B2)]]
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="108" name="J3S2 - Entretien (Suite 2B2)" tags="" position="1475,12425" size="100,100">- Arrêtez ce cinéma enfin ! Vous écriez vous.
 
@@ -1699,24 +1718,24 @@ Le criminel est surpris du ton de votre voix.
 [[Mentionner ses tueries|J3S2 - Entretien (Suite 2B2A)]]
 [[Mentionner son jugement|J3S2 - Entretien (Suite 2B2B)]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="109" name="J3S2 - Entretien (Suite 2B2A)" tags="" position="1325,12675" size="100,100">- Comme si quelqu&#39;un comme vous s&#39;arrêtait de tuer ! vous lancez.
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="109" name="J3S2 - Entretien (Suite 2B2A)" tags="" position="1325,12675" size="100,100">- Comme si quelqu&#39;un comme vous s&#39;arrêtais de tuer ! vous lancez.
 
-- J&#39;en ai fait le tour, croyez le ou non.
+- J&#39;en ai fais le tour, croyez le ou non.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[Revenons à nos mouton|J3S2 - Entretien (Suite 2B3)]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="110" name="J3S2 - Entretien (Suite 2B2B)" tags="" position="1575,12675" size="100,100">- Vous avez été jugé pour être ici, on ne place pas les détenus selon leurs préférences.
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="110" name="J3S2 - Entretien (Suite 2B2B)" tags="" position="1575,12675" size="100,100">- Vous avez été jugé pour être ici on ne place pas les détenus selon leur préférences.
 
-- C&#39;est ce qu&#39;ils disent, ironise il. Dans mon cas ils étaient soulagés parce que selon la loi j&#39;aurais dû être dans la pièce d&#39;à coté.
+- C&#39;est ce qu&#39;ils disent, ironise il. Dans mon cas ils étaient soulagés parce que selon la loi j&#39;aurais du être dans la pièce d&#39;a coté.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[Revenons à nos mouton|J3S2 - Entretien (Suite 2B3)]]
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="111" name="J3S2 - Entretien (Suite 2B3)" tags="" position="1450,12925" size="100,100">&lt;&lt; set $CriminelConfiance += 1&gt;&gt;
-- Revenons à nos moutons, vous grommelez avant de retourner à vos notes
+- Revenons en à nos moutons, vous grommelez avant de retourner à vos notes
 
 Le criminel vous observe quelques secondes.
 
@@ -1726,9 +1745,9 @@ Le criminel vous observe quelques secondes.
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J3S2 - Entretien Hub 1]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="112" name="J3S2 - Entretien Hub 1 Question Mariages" tags="" position="250,13500" size="100,100">- Racontez moi pourquoi vos mariages ont échoué.
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="112" name="J3S2 - Entretien Hub 1 Question Mariages" tags="" position="250,13500" size="100,100">- Racontez moi pourquoi vos mariages ont échoués.
 
-- Boh, y a pas de raisons particulières, la plupart du temps elles se disaient que je ne les aimais pas réellement et se barraient, dit-il en haussant les épaules. Et la dernière je l&#39;ai tuée mais vous le savez déjà.
+- Boh, y a pas de raisons particulières, la plupart du temps elles se disaient que je ne les aimais pas réellement et se barraient, dit-il en haussant les épaules. Et la dernière je l&#39;ai tué mais vous le savez déjà.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1746,23 +1765,25 @@ Le criminel vous regarde, amusé.
 [[Oui|J3S2 - Entretien Hub 1 Question Amour (Suite)]]
 [[Non|J3S2 - Entretien Hub 1 Question Amour (Suite)]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="114" name="J3S2 - Entretien Hub 1 Question Perception" tags="" position="2100,13700" size="100,100">Chut... Vous entendez
--&gt;Hallucinations auditives (SIMULÉ)
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="114" name="J3S2 - Entretien Hub 1 Question Perception" tags="" position="2100,13700" size="100,100">- Est ce que vous percevez des choses que les autres ne perçoivent pas ?
+
+- Rien que là écoutez...
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-[[Qu&#39;entendez vous ?|J3S2 - Entretien Hub 1 Question Perception A]]
-[[Qu&#39;entendez vous ?|J3S2 - Entretien Hub 1 Question Perception B]]
+[[Questionner|J3S2 - Entretien Hub 1 Question Perception A]]
+[[Contredire|J3S2 - Entretien Hub 1 Question Perception B]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="115" name="J3S2 - Entretien Hub 1 (Transition)" tags="" position="1175,14700" size="100,100">&lt;&lt;if $PointsRupture gte 2&gt;&gt; \
-&lt;&lt;if $J3S2_Heure === 2&gt;&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="115" name="J3S2 - Entretien Hub 1 (Transition)" tags="" position="1175,14700" size="100,100">&lt;&lt;if $PointsRupture gte 2 and $J3S2_Heure === 2&gt;&gt; \
 [[ [...]|J3S3 - Start]]
+&lt;&lt;elseif $PointsRupture gte 2&gt;&gt; \
 &lt;&lt;else&gt;&gt; \
 [[ [...]|J3S2 - Entretien Hub 1]]
-&lt;&lt;/if&gt;&gt; \
-&lt;&lt;else&gt; \
-[[ [...]|J3S2 - Entretien Hub 1]]
-&lt;&lt;/if&gt; \</tw-passagedata><tw-passagedata pid="116" name="J3S2 - Entretien Hub 1 Question Perception A" tags="" position="1950,13950" size="100,100">Des voix. Elles commentent. Elles disent que vous ne devriez pas être là.
+&lt;&lt;/if&gt;&gt; \</tw-passagedata><tw-passagedata pid="116" name="J3S2 - Entretien Hub 1 Question Perception A" tags="" position="1950,13950" size="100,100">Vous l&#39;observez.
+
+- Qu&#39;entendez vous
+
+- Des voix, elles commentent. Elles disent que vous ne devirez pas être là.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1770,11 +1791,9 @@ Le criminel vous regarde, amusé.
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="117" name="J3S2 - Entretien Hub 1 Question Perception B" tags="" position="2225,13950" size="100,100">&lt;&lt;set $CriminelConfiance += 1&gt;&gt; \
 Vous levez les yeux au ciel
-
 - Très drôle, vous le faites à chaque psychiatre ? 
 
 Le criminel étire un sourire mesquin.
-
 - Vous commencez à bien me connaitre, dit-il amusé.
 
 &lt;&lt;timed 1s&gt;&gt; \
@@ -1784,35 +1803,36 @@ Le criminel étire un sourire mesquin.
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="118" name="J3S2 - Entretien Hub 1 Question Mere" tags="" position="1100,13525" size="100,100">- Vous vous en doutez, j&#39;aimerais en savoir plus sur votre mère.
 
 Le criminel range son sourire. Son visage devient froid, presque menaçant.
-
 - Encore les parents. Toujours les parents...
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-[[Vous en voulez à votre mère ?|J3S2 - Entretien Hub 1 Question Mere A]]
-[[Raconter une anecdote de vos parents|J3S2 - Entretien Hub 1 Question Mere B]]
+[[Interroger|J3S2 - Entretien Hub 1 Question Mere A]]
+[[Alléger l&#39;atmosphère|J3S2 - Entretien Hub 1 Question Mere B]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="119" name="J3S2 - Entretien Hub 1 Question Mere A" tags="" position="950,13675" size="100,100">&lt;&lt;if $CriminelConfiance gte 1&gt;&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="119" name="J3S2 - Entretien Hub 1 Question Mere A" tags="" position="950,13675" size="100,100">Vous vous avancez et parlez plus bas, d&#39;un ton plus calme.
+- Vous en voulez à votre mère ?
+
+&lt;&lt;if $CriminelConfiance gte 1&gt;&gt; \
 &lt;&lt;set $CriminelConfiance -= 1&gt;&gt; \
-&quot;Je ne lui en veux pas.&quot;
--&gt; Émoussement affectif (VRAI)
+- Non.
 
-Je vous crois pas
+- Je peine à vous croire
 
-Avoue le traumatisme et liste chaque maltraitance et qu&#39;il n&#39;ont plus d&#39;importance.
--&gt; indice certain sur la responsabilité de la mère
+- C&#39;était une mauvaise femme c&#39;est clair. Elle m&#39;a cogné, elle m&#39;a fait chialé, elle m&#39;a même brulé ses mégots dessus un jour mais tout ça n&#39;a plus d&#39;importance, c&#39;est trop tard pour la rancœur.
 
 [[ [...]|J3S2 - Entretien Hub 1 (Transition)]]
 
 &lt;&lt;else&gt;&gt; \
 &lt;&lt;set $PsyDommages += 1&gt;&gt; \
-Avoue l&#39;avoir tué. 
-&quot;Je ne lui en veux pas. Elle a payé sa dette.&quot; Où est votre stylo d&#39;ailleurs ?
-Le psy comprend qu&#39;il peut nous égorger avec le stylo
+- Elle est six pied sous terre maintenant. C&#39;est la treizième personne que j&#39;ai tué et j&#39;ai fais en sorte qu&#39;on ne la retrouve jamais.
 
-Tétaniser, ne rien faire
+Il avoue tout cela d&#39;un ton placide presque glaciale qui vous laisse muet.
+- Vous auriez pas perdu votre stylp d&#39;ailleurs ? Je suis sûr de l&#39;avoir vu tout à l&#39;heure
 
-Un autre sujet peut être ?
+Vous baissez les yeux, il a raison et il en est certainement la cause. Vous savez ce qu&#39;il est capable de faire avec cet outil surtout à cette distance. Vous vous maudissez de vous être avancé mais n&#39;osez pas bouger d&#39;un pouce de peur de déclencher une réaction de sa part. Vous peinez à déglutir, complétement tétanisé.
+
+- Un autre sujet peut être ? demande-t-il, le plus calmement du monde.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1823,19 +1843,22 @@ Un autre sujet peut être ?
 &lt;&lt;/if&gt; \
 &lt;&lt;/if&gt;&gt; \
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="120" name="J3S2 - Entretien Hub 1 Question Mere B" tags="" position="1375,13700" size="100,100">Réponse curieuse de Kyle. Demande de développé
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="120" name="J3S2 - Entretien Hub 1 Question Mere B" tags="" position="1375,13700" size="100,100">- Vous saviez ma mère n&#39;était pas une sainte non plus.
+
+Le criminel penche la tête, curieux.
+- Dites m&#39;en plus.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-[[Vous en voulez à votre mère ?|J3S2 - Entretien Hub 1 Question Mere A]]
-[[Développé|J3S2 - Entretien Hub 1 Question Mere B (Suite)]]
+[[Interroger|J3S2 - Entretien Hub 1 Question Mere A]]
+[[Développer|J3S2 - Entretien Hub 1 Question Mere B (Suite)]]
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="121" name="J3S2 - Entretien Hub 1 Question Mere B (Suite)" tags="" position="1375,13900" size="100,100">&lt;&lt;set $CriminelConfiance += 1&gt;&gt; \
-- Vous saviez ma mère n&#39;était pas une sainte non plus.
+- Beaucoup de pression pour que je réussisse comme elle. Elle était très réputé dans le milieu, j&#39;en ai plus souffert que l&#39;inverse.
 
-Le criminel penche la tête, curieux.
+Il hoche longuement la tête, plongé en pleine réflexion.
 
-- Dites m&#39;en plus.
+- C&#39;est intéressant...
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1847,47 +1870,64 @@ Le criminel penche la tête, curieux.
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J2S2 - Archives lecture dossier]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="123" name="J2S2 - Archives lecture dossier (Fin) Final" tags="" position="1150,10850" size="100,100">Vous saluez alors le lieutenant et prenez congé tandis qu&#39;il va ranger les dossiers. Vous rentrez chez vous et retrouvez rapidement votre lit, cette journée était éreintante. Vous sentez que vous approchez du but mais à quel prix.
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="123" name="J2S2 - Archives lecture dossier (Fin) Final" tags="" position="1150,10850" size="100,100">Vous saluez alors le lieutenant et prenez congé tandis qu&#39;il va ranger les dossiers.
+Vous rentrez chez vous et retrouvez rapidement votre lit, cette journée était éreintante. Vous sentez que vous approchez du but mais à quel prix.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-[[ Jour 3|J3S1 - Start]]
+[[Jour 3|J3S1 - Start]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="124" name="J3S2 - FIN DU JEU" tags="" position="300,14100" size="100,100">aaa</tw-passagedata><tw-passagedata pid="125" name="J3S2 - Entretien Hub 1 Question Amour (Suite)" tags="" position="675,13625" size="100,100">- J&#39;ai un vague souvenir d&#39;avoir aimé quelqu&#39;un... J&#39;étais en maternelle alors ça remonte.
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="124" name="J3S2 - FIN DU JEU" tags="" position="300,14100" size="100,100">Vous décidez d&#39;arrêter l&#39;entretien, s&#39;en est trop pour vous. Vous vous levez et quittez la pièce. Vous traversez la prison avec le gardien avant d&#39;annoncer votre décision au lieutenant. Il est déçu mais il semble comprendre.
+Plusieurs jours plus tard alors que vous vous remettez de cette mission, votre téléphone sonne. Vous ne décrochez pas. Vous savez qui vous appelle et vous décidez de l&#39;ignorer. Plusieurs semaines plus tard encore terré chez vous, volet fermés vous entendez à la radio le verdict final.
+
+Le criminel a été condamné à mort à 12 reprises.  Il avait été transféré dans le couloir de la mort et aujourd&#39;hui il a été exécuté.
+
+C&#39;est vos actions qui ont menés à cette décision, si vous vouliez un choix différent il est trop tard. Si vous pouviez revenir dans le passé vous le feriez sûrement mais c&#39;est impossible.</tw-passagedata><tw-passagedata pid="125" name="J3S2 - Entretien Hub 1 Question Amour (Suite)" tags="" position="675,13625" size="100,100">- J&#39;ai un vague souvenir d&#39;avoir aimé quelqu&#39;un... J&#39;étais en maternelle alors ça remonte.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J3S2 - Entretien Hub 1 (Transition)]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="126" name="J3S3 - Start" tags="" position="1175,14975" size="100,100">Le lieutenant nous interrompt.
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="126" name="J3S3 - Start" tags="" position="1175,14975" size="100,100">La porte derrière vous s&#39;ouvre brusquement. Le lieutenant est là.
+- C&#39;est l&#39;heure, annonce il.
 
-Confession : je sais que vous avez un droit de vie ou de mort sur moi !
+Vous vous levez alors quand le criminel s&#39;adresse à vous.
+- Je sais que vous avez un droit de vie ou de mort sur moi.
 
-Curieux: &quot;que voulez vous dire&quot;
+- Qu&#39;est ce que vous voulez dire
 
-Avant de m&#39;executer, vous me devez au moins un diagnostic.
-Pourquoi suis-je né ainsi ?
+- Avant de m&#39;exécuter, vous me devez au moins un diagnostic. Pourquoi suis-je né ainsi
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
-[[Scientifique : Vous n&#39;êtes pas née ainsi, vous êtes le produit d&#39;un environnement misérable.|J3S3 - Choix Science]]
+[[Répondre|J3S3 - Choix Science]]
 [[Je ne vous doit rien (partir)|J3S3 - Choix Rien]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="127" name="J3S3 - Choix Science" tags="" position="1000,15200" size="100,100">Le lieutenant nous coupe. Vous partez tous les deux. 
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="127" name="J3S3 - Choix Science" tags="" position="1000,15200" size="100,100">- Vous n&#39;êtres pas né ainsi, vous êtes le produit d&#39;un environnement misérable.
+Le lieutenant se racle la gorge, vous le suivez et quittez la pièce.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J3S3 - Choix Fin]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="128" name="J3S3 - Choix Rien" tags="" position="1300,15200" size="100,100">xxx
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="128" name="J3S3 - Choix Rien" tags="" position="1300,15200" size="100,100">- Je ne vous doit rien.
+
+ Vous suivez alors le lieutenant et quittez la pièce.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J3S3 - Choix Fin]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="129" name="J3S3 - Choix Fin" tags="" position="1125,15400" size="100,100">Le lieutenant nous coupe. Vous partez tous les deux. 
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="129" name="J3S3 - Choix Fin" tags="" position="1125,15400" size="100,100">Le lieutenant tend la main.
 
-Le lieutenant réclame le dossier</tw-passagedata><tw-passagedata pid="130" name="J3S1 - But" tags="" position="1000,11250" size="100,100">- Je touche au but, laissez moi finir mon travail.
+- Je vais avoir besoin de ce dossier. C&#39;est important alors notez bien tout dedans, déclare il. Surtout les pathologies, le seul moyen pour lui de ne pas être exécuté c&#39;est qu&#39;une irresponsabilité pénale soit déclaré pour cause de maladie mentale.
+
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
+[[Donner le dossier]]
+[[Demander un moment pour modifier certains détails]]
+&lt;/span&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="130" name="J3S1 - But" tags="" position="1000,11250" size="100,100">- Je touche au but, laissez moi finir mon travail.
 
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
@@ -1936,6 +1976,44 @@ Le lieutenant réclame le dossier</tw-passagedata><tw-passagedata pid="130" name
 &lt;&lt;timed 1s&gt;&gt; \
 &lt;span class=&#39;fade-in&#39;&gt; \
 [[ [...]|J3S2 - Entretien Hub 1]]
+&lt;/span&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="136" name="J3S2 - Entretien (Suite 2B4)" tags="" position="1250,12475" size="100,100">- Revenons en à l&#39;entretien.
+
+[[ [...]|J3S2 - Entretien Hub 1]]</tw-passagedata><tw-passagedata pid="137" name="Choix peine de mort" tags="" position="700,15850" size="100,100">Plusieurs jours plus tard alors que vous vous remettez de cette mission, votre téléphone sonne. Curieux, vous décrochez. Personne ne vous appelle d&#39;ordinaire. Vous reconnaissez la voix du lieutenant. Il vient vous donner le verdict.
+
+Le criminel a été condamné à mort à 12 reprises. Il a décidé de ne pas faire appel, chose rare voir exceptionnel souligne le lieutenant. Il a été transféré dans le couloir de la mort où il attendra sa sentence.
+
+C&#39;est votre dossier qui a mené à cette décision, si vous vouliez un choix différent il est trop tard. Si vous pouviez revenir dans le passé vous le feriez sûrement mais c&#39;est impossible.
+
+&lt;&lt;timed 3s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
+[[ [...]|FIN]]
+&lt;/span&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="138" name="Choix hopital psy" tags="" position="1050,15850" size="100,100">Plusieurs jours plus tard alors que vous vous remettez de cette mission, votre téléphone sonne. Curieux, vous décrochez. Personne ne vous appelle d&#39;ordinaire. Vous reconnaissez la voix du lieutenant. Il vient vous donner le verdict. 
+
+Le criminel a été transféré dans un établissement psychiatrique spécialisé. Il y finira surement sa vie. 
+
+C&#39;est votre dossier qui a mené à cette décision, si vous vouliez un choix différent il est trop tard. Si vous pouviez revenir dans le passé vous le feriez sûrement mais c&#39;est impossible.
+
+&lt;&lt;timed 3s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
+[[ [...]|FIN]]
+&lt;/span&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="139" name="FIN" tags="" position="850,16050" size="100,100">Fin</tw-passagedata><tw-passagedata pid="140" name="Donner le dossier" tags="" position="900,15600" size="100,100">Vous tendez votre dossier en direction du lieutenant.
+
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
+&lt;&lt;set $ChoiceIsPyshco to setup.GetPyschoResult()&gt;&gt; \
+&lt;&lt;if $ChoiceIsPyshco === true&gt;&gt; \
+[[ [...]|Choix peine de mort]]
+&lt;&lt;else&gt;&gt; \
+[[ [...]|Choix hopital psy]]
+&lt;&lt;/if&gt;&gt; \
+&lt;/span&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="141" name="Demander un moment pour modifier certains détails" tags="" position="1225,15600" size="100,100">
+&lt;&lt;timed 1s&gt;&gt; \
+&lt;span class=&#39;fade-in&#39;&gt; \
+[[Donner le dossier]] 
 &lt;/span&gt; \
 &lt;&lt;/timed&gt;&gt; \</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
