@@ -863,15 +863,15 @@ Le lieutenant passe son badge et se met à parler dans sa barbe.
 [[Demander pourquoi vous vous arrêtez|J1S2 - Première visite (Suite 2A)]]
 [[Provoquer le lieutenant|J1S2 - Première visite (Suite 2B)]]
 &lt;/span&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="J1S2 - Description Prisonnier 1" tags="" position="625,3550" size="100,100">Descprtion prisonier 1 et sa cellule (il chante)
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="J1S2 - Description Prisonnier 1" tags="" position="625,3550" size="100,100">Le prisonnier chante, il vous regarde passer mais ne s&#39;interrompt pas.
 
 [[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
-[[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]</tw-passagedata><tw-passagedata pid="30" name="J1S2 - Description Prisonnier 2" tags="" position="850,3550" size="100,100">Descprtion prisonier 2 et sa cellule (écrit sur les murs)
+[[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]</tw-passagedata><tw-passagedata pid="30" name="J1S2 - Description Prisonnier 2" tags="" position="850,3550" size="100,100">La cellule est particulièrement désordonné, le prisonnier écrit sur le mur des mots que seul lui peut comprendre.
 
 [[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
 [[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]
 
-</tw-passagedata><tw-passagedata pid="31" name="J1S2 - Description Prisonnier 3" tags="" position="1050,3550" size="100,100">Descprtion prisonier 3 et sa cellule (fixe le psychiatre)
+</tw-passagedata><tw-passagedata pid="31" name="J1S2 - Description Prisonnier 3" tags="" position="1050,3550" size="100,100">Le détenu vous fixe, debout dans sa cellule. Il ne bouge pas d&#39;un pouce et vous observe passer les yeux grand ouverts.
 
 [[Suivre silencieusement le lieutenant|J1S2 - Première visite (Suite 2)]]
 [[Regarder chaque prisonniers|J1S2 - Première visite Voir prisonniers]]
@@ -1764,15 +1764,12 @@ Le criminel vous regarde, amusé.
 [[Questionner|J3S2 - Entretien Hub 1 Question Perception A]]
 [[Contredire|J3S2 - Entretien Hub 1 Question Perception B]]
 &lt;/span&gt; \
-&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="115" name="J3S2 - Entretien Hub 1 (Transition)" tags="" position="1175,14700" size="100,100">&lt;&lt;if $PointsRupture gte 2&gt;&gt; \
-&lt;&lt;if $J3S2_Heure === 2&gt;&gt; \
+&lt;&lt;/timed&gt;&gt; \</tw-passagedata><tw-passagedata pid="115" name="J3S2 - Entretien Hub 1 (Transition)" tags="" position="1175,14700" size="100,100">&lt;&lt;if $PointsRupture gte 2 and $J3S2_Heure === 2&gt;&gt; \
 [[ [...]|J3S3 - Start]]
+&lt;&lt;elseif $PointsRupture gte 2&gt;&gt; \
 &lt;&lt;else&gt;&gt; \
 [[ [...]|J3S2 - Entretien Hub 1]]
-&lt;&lt;/if&gt;&gt; \
-&lt;&lt;else&gt; \
-[[ [...]|J3S2 - Entretien Hub 1]]
-&lt;&lt;/if&gt; \</tw-passagedata><tw-passagedata pid="116" name="J3S2 - Entretien Hub 1 Question Perception A" tags="" position="1950,13950" size="100,100">Vous l&#39;observez.
+&lt;&lt;/if&gt;&gt; \</tw-passagedata><tw-passagedata pid="116" name="J3S2 - Entretien Hub 1 Question Perception A" tags="" position="1950,13950" size="100,100">Vous l&#39;observez.
 
 - Qu&#39;entendez vous
 
